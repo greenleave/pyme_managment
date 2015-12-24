@@ -2,38 +2,35 @@ package ar.com.greenleave.pymeManagment.model.dao.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import ar.com.greenleave.pymeManagment.model.dao.PymeManagmentGenericDao;
 
+@Repository(value="pymeManagmentGenericDao")
 public class PymeManagmentGenericDaoImpl implements PymeManagmentGenericDao {
 
 	public void save(Object objeto) {
-		// TODO Auto-generated method stub
-
+		getSession().save(objeto);
 	}
 
 	public void update(Object objeto) {
-		// TODO Auto-generated method stub
-
+		getSession().update(objeto);
 	}
 
 	public void delete(Object objeto) {
-		// TODO Auto-generated method stub
-
+		getSession().delete(objeto);
 	}
 
 	public void saveOrUpdate(Object objeto) {
-		// TODO Auto-generated method stub
-
+		getSession().saveOrUpdate(objeto);
 	}
 
 	public <T> T get(Class<T> clase, Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return (T)getSession().get(clase, id);
 	}
-
+	
 	public <T> List<T> findAll(Class<T> clase) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+		return getSession().createCriteria(clase).list();
+	}	
 
 }

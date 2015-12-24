@@ -32,3 +32,4 @@ src/main/gwt-unitCache/
 webapp/
 !webapp/WEB-INF/web.xml
 !war/WEB-INF/web.xml
+/ar/
