@@ -1,4 +1,4 @@
-package ar.com.greenleave.pyme_managment.gestion_usuarios;
+package ar.com.greenleave.pymeManagment.model;
 
 public class TipoTelefono {
 	private Long id;
