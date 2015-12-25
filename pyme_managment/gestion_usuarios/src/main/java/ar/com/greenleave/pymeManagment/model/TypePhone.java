@@ -21,7 +21,7 @@ public class TypePhone implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
-	@Column(name = "DESCRIPCION")
+	@Column(name = "DESCRIPTION")
 	private String typePhone;
 
 	/**

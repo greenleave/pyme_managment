@@ -14,13 +14,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import ar.com.greenleave.pymeManagment.model.TypeDocument;
 import ar.com.greenleave.pymeManagment.model.TypePhone;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/ar/com/greenleave/pymeManagment/model/spring/ApplicationContext.xml" })
 @Transactional
 @TransactionConfiguration(transactionManager = "pymeManagmentTransactionManager", defaultRollback = true)
-// @TransactionConfiguration(transactionManager = "transactionManager")
+
 public class GenericDaoTest extends AbstractTransactionalJUnit4SpringContextTests {
 
 	@Autowired
@@ -44,6 +45,14 @@ public class GenericDaoTest extends AbstractTransactionalJUnit4SpringContextTest
 		TypePhone tipoTel= new TypePhone();
 		tipoTel.setTypePhone("Casa");
 		genericDao.save(tipoTel);
+	}
+	
+	@Test
+	@Rollback(false)
+	public void insertTypeDocument(){
+		TypeDocument typeDocument= new TypeDocument();
+		typeDocument.setTypeDocument("D.N.I");
+		genericDao.save(typeDocument);
 	}
 	
 }
