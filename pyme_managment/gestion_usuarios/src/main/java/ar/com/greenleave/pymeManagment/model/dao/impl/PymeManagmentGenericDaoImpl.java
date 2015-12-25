@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import ar.com.greenleave.pymeManagment.model.dao.PymeManagmentGenericDao;
 
 @Repository(value="pymeManagmentGenericDao")
-public class PymeManagmentGenericDaoImpl implements PymeManagmentGenericDao {
+public class PymeManagmentGenericDaoImpl extends HibernateDaoHelper implements PymeManagmentGenericDao {
 
 	public void save(Object objeto) {
 		getSession().save(objeto);
