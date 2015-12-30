@@ -5,12 +5,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="PM_TYPE_DOCUMENT")
+@Table(name = "PM_TYPE_DOCUMENT")
 public class TypeDocument {
-	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,8 +19,10 @@ public class TypeDocument {
 	private Long id;
 	@Column(name = "DESCRIPTION")
 	private String typeDocument;
-	
-	
+
+	@ManyToOne
+	@JoinColumn(name = "ID_COUNTRY")
+	private Country country;
 
 	/**
 	 * 
@@ -41,6 +44,5 @@ public class TypeDocument {
 	public void setTypeDocument(String typeDocument) {
 		this.typeDocument = typeDocument;
 	}
-
 
 }

@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="PM_TYPE_CLIENT")
+@Table(name = "PM_TYPE_CLIENT")
 public class TypeClient {
 
 	@Id
@@ -17,5 +17,27 @@ public class TypeClient {
 	private Long id;
 	@Column(name = "DESCRIPTION")
 	private String typeClient;
-	
+
+	/**
+	 * 
+	 * GETTERS AND SETTERS
+	 * 
+	 */
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTypeClient() {
+		return typeClient;
+	}
+
+	public void setTypeClient(String typeClient) {
+		this.typeClient = typeClient;
+	}
+
 }

@@ -25,3 +25,4 @@ DESCRIPTION VARCHAR(100),
 constraint pk_id_type_country primAry key(ID)
 )
 
+
