@@ -16,7 +16,7 @@
 
 
 
-	<bean id="gestionClienteDao" class="ar.com.greenleave.pymeManagment.gestionCliente.model.dao.impl.gestionClienteDaoImpl">
+	<bean id="gestionClienteDao" class="ar.com.greenleave.pymeManagment.gestionCliente.model.dao.impl.GestionClienteDaoImpl">
 		<property name="dataSource" ref="PYMEDB" />
 	</bean>
 	<!-- <bean id="gestionServiceWrapper" class="ar.com.nextel.nexus.stsuc.model.integracion.GestionServiceWrapper"> 
