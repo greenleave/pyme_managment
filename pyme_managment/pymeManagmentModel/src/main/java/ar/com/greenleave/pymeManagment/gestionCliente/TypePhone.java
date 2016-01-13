@@ -1,4 +1,4 @@
-package ar.com.greenleave.pymeManagment.model;
+package ar.com.greenleave.pymeManagment.gestionCliente;
 
 import java.io.Serializable;
 

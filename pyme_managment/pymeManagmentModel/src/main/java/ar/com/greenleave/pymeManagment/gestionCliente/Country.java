@@ -1,11 +1,10 @@
-package ar.com.greenleave.pymeManagment.model;
+package ar.com.greenleave.pymeManagment.gestionCliente;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -15,20 +14,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PM_COUNTRY")
 public class Country {
-
-	public Country() {
-
-		typeDocuments = new ArrayList<TypeDocument>();
-	}
-
 	@Id
-	@Column(name = "ID")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private Long id;
-	@Column(name = "DESCRIPCION")
+	
+	@Column(name = "DESCRIPTION")
 	private String name;
-
-	@OneToMany(targetEntity = TypeDocument.class, mappedBy = "Country", cascade = CascadeType.ALL)
+	
+	@OneToMany(mappedBy = "country", fetch=FetchType.LAZY)
 	private List<TypeDocument> typeDocuments;
 
 	/**
@@ -52,5 +46,13 @@ public class Country {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 
+	public List<TypeDocument> getTypeDocuments() {
+		return typeDocuments;
+	}
+
+	public void setTypeDocuments(List<TypeDocument> typeDocuments) {
+		this.typeDocuments = typeDocuments;
+	}
 }

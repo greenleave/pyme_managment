@@ -1,7 +1,8 @@
-package ar.com.greenleave.pymeManagment.model;
+package ar.com.greenleave.pymeManagment.gestionCliente;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class TypeDocument {
 	@Column(name = "DESCRIPTION")
 	private String typeDocument;
 
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name = "ID_COUNTRY")
 	private Country country;
 
@@ -43,6 +44,14 @@ public class TypeDocument {
 
 	public void setTypeDocument(String typeDocument) {
 		this.typeDocument = typeDocument;
+	}
+
+	public Country getCountry() {
+		return country;
+	}
+
+	public void setCountry(Country country) {
+		this.country = country;
 	}
 
 }
