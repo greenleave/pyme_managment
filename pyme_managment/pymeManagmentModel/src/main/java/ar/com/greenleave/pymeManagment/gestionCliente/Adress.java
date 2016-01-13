@@ -31,4 +31,13 @@ public class Adress {
 	@JoinColumn(name="ID_TYPE_ADRESS")
 	private TypeAdress typeAdress;
 	
+	@Column (name="POST_CODE")
+	private String postCode;
+	
+	@ManyToOne
+	@JoinColumn(name="ID_COUNTRY")
+	private Country country;
+	
+	
+	
 }
