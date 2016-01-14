@@ -4,15 +4,13 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>ar.com.greenleave.pyme_managment</groupId>
-		<artifactId>pyme_managment</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		  <groupId>ar.com.greenleave.pyme_managment</groupId>
+		  <artifactId>pyme_managment</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>ar.com.greenleave.pyme_managment</groupId>
-	<artifactId>pymeManagmentView</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>gestionClientesView</artifactId>
 	<packaging>war</packaging>
-	<name>pymeManagmentView Maven Webapp</name>
+	<name>gestionClientesView Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -22,15 +20,20 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.5.6</version>
+		</dependency>
+		<dependency>
 			<groupId>ar.com.greenleave.pyme_managment</groupId>
 			<artifactId>gestionClientesModel</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>
