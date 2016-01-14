@@ -6,7 +6,7 @@
 		<artifactId>pyme_managment</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>gestionClientes</artifactId>
+	<artifactId>gestionClientesModel</artifactId>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.2.14.RELEASE</spring.version>

@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+		<!-- Descargo los archivos por id -->
+	<servlet>
+		<servlet-name>myFirstServlet</servlet-name>
+		<servlet-class>ar.com.greenleave.pymeManagment.gestionCliente.servlet.MyFirstServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>myFirstServlet</servlet-name>
+		<url-pattern>/myFirstServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
 </web-app>

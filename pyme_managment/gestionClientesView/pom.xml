@@ -23,11 +23,17 @@
 		</dependency>
 		<dependency>
 			<groupId>ar.com.greenleave.pyme_managment</groupId>
-			<artifactId>gestionClientes</artifactId>
+			<artifactId>gestionClientesModel</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>pymeManagmentView</finalName>
+		<finalName>gestionClientesView</finalName>
 	</build>
 </project>
