@@ -9,10 +9,10 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<groupId>ar.com.greenleave.pyme_managment</groupId>
-	<artifactId>pymeManagmentView</artifactId>
+	<artifactId>gestionClientesView</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>pymeManagmentView Maven Webapp</name>
+	<name>gestionClientesView Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
