@@ -3,17 +3,5 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-	<display-name>Archetype Created Web Application</display-name>
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
-	<!-- Descargo los archivos por id -->
-	<servlet>
-		<servlet-name>myFirstServlet</servlet-name>
-		<servlet-class>ar.com.greenleave.pymeManagment.gestionCliente.servlet.MyFirstServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>myFirstServlet</servlet-name>
-		<url-pattern>/myFirstServlet</url-pattern>
-	</servlet-mapping>
+  <display-name>Archetype Created Web Application</display-name>
 </web-app>
