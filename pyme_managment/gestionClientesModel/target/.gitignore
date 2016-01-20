@@ -1,0 +1,5 @@
+/test-classes/
+*.war
+*.class
+*.rcp
+*.prefs
