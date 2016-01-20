@@ -1,5 +1,6 @@
 *.pydevproject
 .metadata
+.gradle
 bin/
 tmp/
 *.tmp
@@ -24,4 +25,10 @@ local.properties
 *.jar
 *.project
 *Cache*
+gwt-unitCache/
+src/main/gwt-unitCache/
+webapp/
+!webapp/WEB-INF/web.xml
+!war/WEB-INF/web.xml
+stsucView/war
 
