@@ -16,11 +16,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.com.greenleave.pymeManagment.gestionCliente.model.Country;
-import ar.com.greenleave.pymeManagment.gestionCliente.model.TypeClient;
-import ar.com.greenleave.pymeManagment.gestionCliente.model.TypeDocument;
-import ar.com.greenleave.pymeManagment.gestionCliente.model.TypePhone;
-import ar.com.greenleave.pymeManagment.gestionCliente.model.dao.GestionClienteGenericDao;
+import ar.com.greenleave.pymeManagment.model.Country;
+import ar.com.greenleave.pymeManagment.model.TypePerson;
+import ar.com.greenleave.pymeManagment.model.TypeDocument;
+import ar.com.greenleave.pymeManagment.model.TypePhone;
+import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.GestionClienteGenericDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/ar/com/greenleave/pymeManagment/gestionCliente/model/spring/ApplicationContext.xml" })
@@ -41,7 +41,7 @@ public class GenericDaoTest extends AbstractTransactionalJUnit4SpringContextTest
 	@Test
 	@Rollback(false)
 	public void testSaveTipoCliente(){
-		TypeClient tipoCliente = new TypeClient();
+		TypePerson tipoCliente = new TypePerson();
 		tipoCliente.setTypeClient("Chamullero");
 		genericDao.save(tipoCliente);
 	}

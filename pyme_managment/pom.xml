@@ -6,7 +6,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-  	<module>gestionClientesModel</module>
-    <module>gestionClientesView</module>
+  	<module>pymeManagmentModel</module>
+    <module>pymeManagmentView</module>
   </modules>
 </project>
