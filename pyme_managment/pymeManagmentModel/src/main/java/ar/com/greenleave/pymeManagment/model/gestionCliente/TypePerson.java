@@ -1,4 +1,4 @@
-package ar.com.greenleave.pymeManagment.model;
+package ar.com.greenleave.pymeManagment.model.gestionCliente;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,9 +23,6 @@ public class TypePerson {
 	 * GETTERS AND SETTERS
 	 * 
 	 */
-
-	
-	
 	
 	public Long getId() {
 		return id;
