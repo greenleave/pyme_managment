@@ -1,4 +1,4 @@
-package ar.com.greenleave.pymeManagment.model.gestionCliente.controller;
+package ar.com.greenleave.pymeManagment.model.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,6 +13,5 @@ public class GestionClienteManager {
 	public String getAllCoutries(){
 		return null;
 	}
-	
 	
 }
