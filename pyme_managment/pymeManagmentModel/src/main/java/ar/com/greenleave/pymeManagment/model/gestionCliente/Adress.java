@@ -29,7 +29,7 @@ public class Adress {
 	
 	@ManyToOne
 	@JoinColumn(name="ID_TYPE_ADRESS")
-	private TypeAdress typeAdress;
+	private TypeOfAdress typeAdress;
 	
 	@Column (name="POST_CODE")
 	private String postCode;

@@ -17,7 +17,7 @@
 	<context:annotation-config />
 	<!--Scan de las clases -->
 	<context:component-scan
-		base-package="ar.com.greenleave.pymeManagment.gestionCliente" />
+		base-package="ar.com.greenleave.pymeManagment.model" />
 
 	<!--DataSource -->
 	<import resource="DataSource.xml" />
