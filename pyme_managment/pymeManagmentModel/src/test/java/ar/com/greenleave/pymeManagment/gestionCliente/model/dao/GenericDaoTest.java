@@ -16,10 +16,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.com.greenleave.pymeManagment.model.Country;
-import ar.com.greenleave.pymeManagment.model.TypePerson;
-import ar.com.greenleave.pymeManagment.model.TypeDocument;
-import ar.com.greenleave.pymeManagment.model.TypePhone;
+import ar.com.greenleave.pymeManagment.model.gestionCliente.Country;
+import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeDocument;
+import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfPerson;
+import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfPhone;
 import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.GestionClienteGenericDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -41,7 +41,7 @@ public class GenericDaoTest extends AbstractTransactionalJUnit4SpringContextTest
 	@Test
 	@Rollback(false)
 	public void testSaveTipoCliente(){
-		TypePerson tipoCliente = new TypePerson();
+		TypeOfPerson tipoCliente = new TypeOfPerson();
 		tipoCliente.setTypeClient("Chamullero");
 		genericDao.save(tipoCliente);
 	}
@@ -49,14 +49,14 @@ public class GenericDaoTest extends AbstractTransactionalJUnit4SpringContextTest
 	
 	@Test
 	public void testTipoTelefono(){
-		TypePhone tipoTelefono=genericDao.get(TypePhone.class, 1L);
+		TypeOfPhone tipoTelefono=genericDao.get(TypeOfPhone.class, 1L);
 		Assert.assertNotNull(tipoTelefono);
 	}
 	
 	@Test
 	@Rollback(false)
 	public void insertTipoTelefono(){
-		TypePhone tipoTel= new TypePhone();
+		TypeOfPhone tipoTel= new TypeOfPhone();
 		tipoTel.setTypePhone("Casa");
 		genericDao.save(tipoTel);
 	}

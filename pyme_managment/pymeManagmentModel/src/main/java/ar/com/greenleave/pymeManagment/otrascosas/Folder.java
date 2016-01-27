@@ -1,4 +1,4 @@
-package ar.com.greenleave.pymeManagment.model;
+package ar.com.greenleave.pymeManagment.otrascosas;
 
 import java.util.Date;
 import java.util.List;

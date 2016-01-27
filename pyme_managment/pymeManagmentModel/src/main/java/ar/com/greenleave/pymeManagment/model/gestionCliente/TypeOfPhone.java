@@ -1,4 +1,6 @@
-package ar.com.greenleave.pymeManagment.model;
+package ar.com.greenleave.pymeManagment.model.gestionCliente;
+
+import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,25 +10,26 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PM_TYPE_PERSON")
-public class TypePerson {
+@Table(name = "PM_TYPE_PHONE")
+public class TypeOfPhone implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7953352339275979650L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
 	@Column(name = "DESCRIPTION")
-	private String typeClient;
+	private String typePhone;
 
 	/**
 	 * 
-	 * GETTERS AND SETTERS
+	 * Comienzo del bloque para los getters and setters
 	 * 
 	 */
 
-	
-	
-	
 	public Long getId() {
 		return id;
 	}
@@ -35,12 +38,13 @@ public class TypePerson {
 		this.id = id;
 	}
 
-	public String getTypeClient() {
-		return typeClient;
+	public String getTypePhone() {
+		return typePhone;
 	}
 
-	public void setTypeClient(String typeClient) {
-		this.typeClient = typeClient;
+	public void setTypePhone(String typePhone) {
+		this.typePhone = typePhone;
 	}
 
+	
 }

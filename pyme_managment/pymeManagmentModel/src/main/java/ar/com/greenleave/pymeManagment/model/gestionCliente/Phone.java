@@ -1,4 +1,4 @@
-package ar.com.greenleave.pymeManagment.model;
+package ar.com.greenleave.pymeManagment.model.gestionCliente;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -23,7 +23,7 @@ public class Phone {
 	
 	@ManyToOne
 	@JoinColumn(name="ID_TYPE_PHONE")
-	private TypePhone typePhone;
+	private TypeOfPhone typePhone;
 
 	public Long getId() {
 		return id;
