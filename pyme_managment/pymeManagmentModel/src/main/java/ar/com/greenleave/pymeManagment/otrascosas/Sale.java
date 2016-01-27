@@ -1,6 +1,8 @@
-package ar.com.greenleave.pymeManagment.model.gestionCliente;
+package ar.com.greenleave.pymeManagment.otrascosas;
 
 import java.util.List;
+
+import ar.com.greenleave.pymeManagment.model.gestionCliente.Vendor;
 
 public class Sale extends Transaction{
 

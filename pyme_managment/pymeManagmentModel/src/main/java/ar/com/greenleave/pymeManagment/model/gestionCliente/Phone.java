@@ -23,7 +23,7 @@ public class Phone {
 	
 	@ManyToOne
 	@JoinColumn(name="ID_TYPE_PHONE")
-	private TypePhone typePhone;
+	private TypeOfPhone typePhone;
 
 	public Long getId() {
 		return id;

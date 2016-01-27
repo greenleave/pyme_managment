@@ -1,5 +1,8 @@
 package ar.com.greenleave.pymeManagment.model.gestionCliente;
 
-public enum HaberEnum {
 
+public enum TypeOfPerson {
+	HOMBRE,
+	MUJER,
+	JURIDICA;
 }
