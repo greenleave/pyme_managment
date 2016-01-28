@@ -16,6 +16,8 @@ public class TypeOfAdress {
 	private Long id;
 	@Column(name = "DESCRIPTION")
 	private String typeAdress;
+	
+	
 	public Long getId() {
 		return id;
 	}
@@ -28,7 +30,4 @@ public class TypeOfAdress {
 	public void setTypeAdress(String typeAdress) {
 		this.typeAdress = typeAdress;
 	}
-	
-	
-	
 }
