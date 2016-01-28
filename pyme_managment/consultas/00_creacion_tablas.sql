@@ -37,19 +37,7 @@ CREATE TABLE PM_TYPE_PHONE(
     constraint pk_id_type_phone primary key(ID)
 );
 
-COMMIT ;
-
-create table PM_PHONE(
-ID INT AUTO_INCREMENT,
-PHONE VARCHAR(30),
-AREA_CODE VARCHAR(20),
-ID_TYPE_PHONE INT,
-ID_COUNTRY INT,
-CONSTRAINT pk_id_phone PRIMARY KEY(ID),
-constraint fk_type_phone FOREIGN KEY (ID_TYPE_PHONE) references PM_TYPE_PHONE(ID),
-constraint fk_country_phone FOREIGN KEY (ID_COUNTRY) references PM_COUNTRY(ID)
-);
-
+commit;
 ### TIPO DE DIRECCION Y DIRECCION  
 CREATE TABLE PM_TYPE_ADRESS(
 	ID INT AUTO_INCREMENT,
@@ -68,6 +56,21 @@ create table PM_PERSON(
 	TYPE_PERSON varchar(20),
 	constraint pk_id_person PRIMARY KEY (ID),
 	constraint fk_id_type_document FOREIGN KEY(ID_TYPE_DOCUMENT) REFERENCES PM_TYPE_DOCUMENT(ID)
+);
+
+COMMIT ;
+create table PM_PHONE(
+ID INT AUTO_INCREMENT,
+PHONE VARCHAR(30),
+AREA_CODE VARCHAR(20),
+ID_TYPE_PHONE INT,
+ID_COUNTRY INT,
+ID_PERSON int,
+CONSTRAINT pk_id_phone PRIMARY KEY(ID),
+constraint fk_type_phone FOREIGN KEY (ID_TYPE_PHONE) references PM_TYPE_PHONE(ID),
+constraint fk_country_phone FOREIGN KEY (ID_COUNTRY) references PM_COUNTRY(ID),
+CONSTRAINT fk_person_phone FOREIGN KEY (ID_PERSON) references PM_PERSON(ID)
+
 );
 
 commit;
