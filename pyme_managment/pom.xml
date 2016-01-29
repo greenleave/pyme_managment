@@ -8,5 +8,6 @@
   <modules>
   	<module>pymeManagmentModel</module>
     <module>pymeManagmentView</module>
+    <module>pymeManagmentController</module>
   </modules>
 </project>

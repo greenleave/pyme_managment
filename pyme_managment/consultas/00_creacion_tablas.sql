@@ -75,6 +75,7 @@ CONSTRAINT fk_person_phone FOREIGN KEY (ID_PERSON) references PM_PERSON(ID)
 
 commit;
 
+
 create table PM_ADRESS(
 	ID INT AUTO_INCREMENT,
     STREET VARCHAR(30),
@@ -82,6 +83,8 @@ create table PM_ADRESS(
     APARTMENT VARCHAR(10),
     ID_TYPE_ADRESS INT,
 	ID_PERSON INT,
+	ID_COUNTRY INT,
+	POST_CODE VARCHAR(10), ##CODIGO POSTAL
     CONSTRAINT pk_id_adress PRIMARY KEY(ID),
     CONSTRAINT fk_id_type_adress FOREIGN KEY (ID_TYPE_ADRESS) references PM_TYPE_ADRESS(ID),
 	CONSTRAINT fk_id_person_adress foreign key(ID_PERSON) references PM_PERSON(ID)
