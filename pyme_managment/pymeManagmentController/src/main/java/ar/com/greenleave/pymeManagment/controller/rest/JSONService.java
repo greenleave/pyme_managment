@@ -7,6 +7,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import ar.com.greenleave.pymeManagment.controller.Product;
+
 @Path("/json/product")
 public class JSONService {
 
@@ -27,10 +29,10 @@ public class JSONService {
 	@Path("/post")
 	@Consumes("application/json")
 	public Response createProductInJSON(Product product) {
-
 		String result = "Product created : " + product;
 		return Response.status(201).entity(result).build();
 		
 	}
+	
 	
 }
