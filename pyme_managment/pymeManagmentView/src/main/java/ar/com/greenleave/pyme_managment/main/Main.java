@@ -2,7 +2,7 @@ package ar.com.greenleave.pyme_managment.main;
 
 import java.awt.EventQueue;
 
-import ar.com.greenleave.pyme_managment.view.Login.Login;
+import ar.com.greenleave.pyme_managment.view.login.Login;
 
 public class Main {
 

@@ -1,4 +1,4 @@
-package ar.com.greenleave.pyme_managment.view.Login;
+package ar.com.greenleave.pyme_managment.view.login;
 
 import javax.swing.JFrame;
 
