@@ -25,10 +25,12 @@ public class GestionClienteGenericDaoImpl extends HibernateDaoHelper implements 
 		getSession().saveOrUpdate(objeto);
 	}
 
+	@SuppressWarnings("unchecked")
 	public <T> T get(Class<T> clase, Long id) {
 		return (T)getSession().get(clase, id);
 	}
 	
+	@SuppressWarnings("unchecked")
 	public <T> List<T> findAll(Class<T> clase) {
 		return getSession().createCriteria(clase).list();
 	}	

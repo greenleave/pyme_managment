@@ -9,6 +9,7 @@ import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.GestionClienteDa
 @Repository(value = "gestionClienteDao")
 public class GestionClienteDaoImpl extends JdbcDaoSupport implements GestionClienteDao {
 	
+	@SuppressWarnings("unused")
 	private final static Logger logger = Logger.getLogger(GestionClienteDaoImpl.class);
 	
 }

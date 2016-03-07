@@ -16,13 +16,14 @@ import ar.com.greenleave.pyme_managment.view.dto.CountryDTO;
 import ar.com.greenleave.pyme_managment.view.services.ServiceGestionCliente;
 
 public class ServiceGestionClienteImpl implements ServiceGestionCliente {
-	private static final String HOST_PAGE = "http://localhost:8080/pymeManagmentController/";
+	private static final String HOST_PAGE = "http://localhost:6163/pymeManagmentController/";
 	private static Gson gson = new Gson();
 	DefaultHttpClient httpClient = new DefaultHttpClient();
 
 	@Override
 	public void savePais(CountryDTO country) {
 		String path = "gestionCliente/post/SavePais";
+		System.out.println(HOST_PAGE+path);
 		HttpPost postRequest = new HttpPost(HOST_PAGE+path);
 		StringEntity input;
 		try {

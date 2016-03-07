@@ -14,7 +14,6 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import ar.com.greenleave.pymeManagment.model.gestionCliente.Country;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.GestionClienteDao;
 import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.GestionClienteGenericDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)

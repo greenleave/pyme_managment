@@ -10,18 +10,12 @@ import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfDocument;
 import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfPhone;
 
 public interface GestionClienteManager {
-
-	
-
 	void deleteTypeDocumentById(Long l);
-	
 	List<Country> getAllCountries();
 	Country getCountryById(Long id);
 	TypeOfDocument getTypeDocumentById(Long id);
-	
 	void updateCountry(Country country);
 	void updateTypeOfDocument(TypeOfDocument typeDocument);
-	
 	void saveCountry(Country country);
 	void savePerson(Person person);
 	void savePhone(Phone phone);
