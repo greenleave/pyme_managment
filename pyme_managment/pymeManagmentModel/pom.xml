@@ -6,9 +6,9 @@
 		<artifactId>pyme_managment</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>ar.com.greenleave.pyme_managment</groupId>
-    <artifactId>pymeManagmentModel</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+	<artifactId>pymeManagmentModel</artifactId>
+	<name>pyme_managmentModel</name>
+	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<spring.version>3.2.14.RELEASE</spring.version>
