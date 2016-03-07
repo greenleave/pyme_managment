@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import ar.com.greenleave.pymeManagment.model.gestionCliente.Country;
 import ar.com.greenleave.pymeManagment.model.gestionCliente.Person;
@@ -14,8 +15,10 @@ import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfPhone;
 import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.GestionClienteGenericDao;
 import ar.com.greenleave.pymeManagment.model.service.GestionClienteManager;
 
+@Transactional
 @Service("gestionClienteManager")
 public class GestionClienteManagerImpl implements GestionClienteManager{
+	
 	@Autowired
 	private GestionClienteGenericDao gestionClienteGenericDao;
 

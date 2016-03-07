@@ -4,11 +4,17 @@
 
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
-
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:ar/com/greenleave/pymeManagment/controller/applicationContext.xml</param-value>
+	</context-param>
 	<context-param>
 		<param-name>resteasy.resources</param-name>
 		<param-value>ar.com.greenleave.pymeManagment.controller.JSONService</param-value>
 	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 	<listener>
 		<listener-class>org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap</listener-class>
 	</listener>
