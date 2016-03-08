@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mappings xmlns="http://dozer.sourceforge.net" xsi:schemaLocation="http://dozer.sourceforge.net
+http://dozer.sourceforge.net/schema/beanmapping.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <mapping> 
+    <class-a>ar.com.nextel.nexus.stsuc.model.GestionServicioTecnico</class-a>
+    <class-b>ar.com.nextel.nexus.stsuc.client.view.dto.GestionInboxDTO</class-b>   
+    <field>
+      <a>cliente.customerCode</a>
+      <b>customerCode</b>
+    </field>
+    <field>
+      <a>fechaCreacion</a>
+      <b>fechaIngreso</b>
+    </field>
+    <field>
+      <a>id</a>
+      <b>idGestion</b>
+    </field>
+    <field>
+      <a>equipo</a>
+      <b>equipo</b>
+    </field>
+    <field>
+      <a>presupuesto.reparaOnline</a>
+      <b>isOnline</b>
+    </field>
+    <field>
+      <a>presupuesto.nivelFalla</a>
+      <b>nivelReparacion</b>
+    </field>
+    <field>
+      <a>idVantive</a>
+      <b>nroGestion</b>
+    </field>
+    <field>
+      <a>usuarioCreacion</a>
+      <b>representante</b>
+    </field>
+    <field>
+      <a>fechaEntregaEstipulada</a>
+      <b>fechaEntregaEstipulada</b>
+    </field>
+  </mapping>  
+<!--   	<configuration>-->
+<!--		<date-format>dd/MM/yyyy</date-format>-->
+<!--	</configuration>-->
+<!-- 	<mapping>  -->
+<!--  		<class-a>ar.com.nextel.nexus.model.Equipo</class-a>  -->
+<!--    		<class-b>ar.com.nextel.nexus.client.view.application.dto.EquipoDTO</class-b>  -->
+<!--  	</mapping>  -->
+	
+</mappings>
+	
