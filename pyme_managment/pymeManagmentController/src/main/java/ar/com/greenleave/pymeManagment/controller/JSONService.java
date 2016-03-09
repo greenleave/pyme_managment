@@ -1,6 +1,5 @@
 package ar.com.greenleave.pymeManagment.controller;
 
-import javax.servlet.http.HttpServlet;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -11,19 +10,15 @@ import javax.ws.rs.core.Response;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Country;
-import ar.com.greenleave.pymeManagment.model.service.GestionClienteManager;
 
-
-@Path("/json/product")
-public class JSONService extends HttpServlet{
+@Path("/")
+public class JSONService{
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -8305371354724486924L;
 	private WebApplicationContext context;
-	private GestionClienteManager gestionCliente;
 
 	public JSONService() {
 		super();
