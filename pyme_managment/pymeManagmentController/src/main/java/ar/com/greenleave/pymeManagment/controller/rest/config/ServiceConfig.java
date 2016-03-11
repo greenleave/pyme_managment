@@ -2,12 +2,12 @@ package ar.com.greenleave.pymeManagment.controller.rest.config;
 
 import java.util.logging.Logger;
 
-
 import org.glassfish.jersey.filter.LoggingFilter;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.ServerProperties;
 import org.glassfish.jersey.server.spring.scope.RequestContextFilter;
+
 import ar.com.greenleave.pymeManagment.controller.rest.service.GestionClienteWService;
 
 
