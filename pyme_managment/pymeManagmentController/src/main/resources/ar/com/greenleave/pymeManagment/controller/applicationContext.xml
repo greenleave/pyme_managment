@@ -17,7 +17,6 @@
     http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 	<import resource="classpath:/ar/com/greenleave/pymeManagment/gestionCliente/model/spring/ApplicationContext.xml" />
 	
-	
 	<!-- 
 	<bean id="mapperDozer" class="ar.com.nextel.nexus.stsuc.server.utils.MapperExtended">
 		<property name="mappingFiles">

@@ -4,9 +4,9 @@ import javax.json.JsonObject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
-
 import ar.com.greenleave.pymeManagment.controller.utils.JSONHelper;
+import ar.com.greenleave.pymeManagment.controller.utils.JSONMapperGestionCliente;
+import ar.com.greenleave.pymeManagment.model.gestionCliente.Country;
 import ar.com.greenleave.pymeManagment.model.service.GestionClienteManager;
 
 /**
@@ -28,8 +28,13 @@ public class GestionClienteController {
 	 */
 	public String crearCliente(String json){
 		JsonObject jsonObject = JSONHelper.buildJsonFromString(json);
-		
 		return null;
+	}
+	
+	public String createCountry(String json){
+		JsonObject jsonObject = JSONHelper.buildJsonFromString(json);
+//		Country country= JSONMapperGestionCliente.mappCountry(jsonObject);
+		return "Todo ok";
 	}
 	
 	

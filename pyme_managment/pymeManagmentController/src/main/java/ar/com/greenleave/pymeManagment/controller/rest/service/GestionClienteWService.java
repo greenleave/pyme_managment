@@ -31,13 +31,12 @@ public class GestionClienteWService {
 	
 	
 	@POST
-	@Path("/gestionCliente/registrarNuevoCliente")
+	@Path("/gestionCliente/createNewCountry")
 	@Produces(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	@Consumes(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	public Response createNewClient(final String json){
 		String resultado = gestionCliente.crearCliente(json);		
 		return Response.status(201).entity(resultado).build();
-		
 	}
 	
 }
