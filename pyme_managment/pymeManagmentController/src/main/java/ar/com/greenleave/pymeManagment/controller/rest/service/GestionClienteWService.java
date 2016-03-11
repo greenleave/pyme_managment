@@ -35,7 +35,7 @@ public class GestionClienteWService {
 	@Produces(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	@Consumes(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	public Response createNewClient(final String json){
-		String resultado = gestionCliente.crearCliente(json);		
+		String resultado = gestionCliente.createCountry(json);		
 		return Response.status(201).entity(resultado).build();
 	}
 	

@@ -22,7 +22,7 @@ public class ServiceGestionClienteImpl implements ServiceGestionCliente {
 
 	@Override
 	public void savePais(CountryDTO country) {
-		String path = "gestionCliente/post/SavePais";
+		String path = "gestionCliente/createNewCountry";
 		System.out.println(HOST_PAGE+path);
 		HttpPost postRequest = new HttpPost(HOST_PAGE+path);
 		StringEntity input;

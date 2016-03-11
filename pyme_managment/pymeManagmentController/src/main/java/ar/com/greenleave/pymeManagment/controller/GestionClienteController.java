@@ -5,8 +5,6 @@ import javax.json.JsonObject;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ar.com.greenleave.pymeManagment.controller.utils.JSONHelper;
-import ar.com.greenleave.pymeManagment.controller.utils.JSONMapperGestionCliente;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Country;
 import ar.com.greenleave.pymeManagment.model.service.GestionClienteManager;
 
 /**
@@ -16,26 +14,16 @@ import ar.com.greenleave.pymeManagment.model.service.GestionClienteManager;
 * @version v1.0
 */
 
-public class GestionClienteController {
-	@Autowired
-	GestionClienteManager gestionClienteManager;
-	
+public interface GestionClienteController {
 	
 	/**
 	 * Se crea un nuevo usuario que llego por medio de un pedido en formato JSON
 	 * @input 
 	 * @return Estado de la creacion. Ok / Error
 	 */
-	public String crearCliente(String json){
-		JsonObject jsonObject = JSONHelper.buildJsonFromString(json);
-		return null;
-	}
+	public String crearCliente(String json);
 	
-	public String createCountry(String json){
-		JsonObject jsonObject = JSONHelper.buildJsonFromString(json);
-//		Country country= JSONMapperGestionCliente.mappCountry(jsonObject);
-		return "Todo ok";
-	}
+	public String createCountry(String json);
 	
 	
 	
