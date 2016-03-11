@@ -21,9 +21,6 @@ public class GestionClienteManagerImpl implements GestionClienteManager{
 	
 	@Autowired
 	private GestionClienteGenericDao gestionClienteGenericDao;
-
-//	@Autowired 
-//	private GestionClienteDao gestionCliente;
 	
 	public void saveCountry(Country country){
 		gestionClienteGenericDao.save(country);
@@ -74,6 +71,7 @@ public class GestionClienteManagerImpl implements GestionClienteManager{
 	public void savePhone(Phone phone) {
 		gestionClienteGenericDao.save(phone);
 		
-	}	
+	}
+
 	
 }
