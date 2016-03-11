@@ -1,5 +1,7 @@
 package ar.com.greenleave.pymeManagment.gestionCliente.model.dao;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.junit.Test;
@@ -40,6 +42,13 @@ public class GenericDaoTest extends AbstractTransactionalJUnit4SpringContextTest
 		country.setCodPhone("+54");
 		country.setCountryCode("ARG");
 		genericDao.save(country);
+	}
+	
+	
+	@Test
+	public void getAllCountries(){
+		List<Country> c = genericDao.findAll(Country.class);
+		System.out.println("HOla");
 	}
 	
 	

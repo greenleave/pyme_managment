@@ -8,15 +8,12 @@ package ar.com.greenleave.pymeManagment.controller;
 */
 
 public interface GestionClienteController {
-	
-	/**
-	 * Se crea un nuevo usuario que llego por medio de un pedido en formato JSON
-	 * @input 
-	 * @return Estado de la creacion. Ok / Error
-	 */
-	public String crearCliente(String json);
-	
+	public String createCliente(String json);
+	public String updateClient(String json);
+	public String deleteClient(String json);
+	public String getAllClients();
 	public String createCountry(String json);
+	
 	
 	
 	
