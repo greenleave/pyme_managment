@@ -41,4 +41,12 @@ public class Phone {
 		this.phone = phone;
 	}
 
+	public TypeOfPhone getTypePhone() {
+		return typePhone;
+	}
+
+	public void setTypePhone(TypeOfPhone typePhone) {
+		this.typePhone = typePhone;
+	}
+
 }

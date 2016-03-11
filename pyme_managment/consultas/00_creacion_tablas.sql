@@ -37,19 +37,7 @@ CREATE TABLE PM_TYPE_PHONE(
     constraint pk_id_type_phone primary key(ID)
 );
 
-COMMIT ;
-
-create table PM_PHONE(
-ID INT AUTO_INCREMENT,
-PHONE VARCHAR(30),
-AREA_CODE VARCHAR(20),
-ID_TYPE_PHONE INT,
-ID_COUNTRY INT,
-CONSTRAINT pk_id_phone PRIMARY KEY(ID),
-constraint fk_type_phone FOREIGN KEY (ID_TYPE_PHONE) references PM_TYPE_PHONE(ID),
-constraint fk_country_phone FOREIGN KEY (ID_COUNTRY) references PM_COUNTRY(ID)
-);
-
+commit;
 ### TIPO DE DIRECCION Y DIRECCION  
 CREATE TABLE PM_TYPE_ADRESS(
 	ID INT AUTO_INCREMENT,
@@ -59,16 +47,6 @@ CREATE TABLE PM_TYPE_ADRESS(
 
 commit;
 
-create table PM_ADRESS(
-	ID INT AUTO_INCREMENT,
-    STREET VARCHAR(30),
-    NUM INT,
-    APARTMENT VARCHAR(10),
-    ID_TYPE_ADRESS INT,
-    CONSTRAINT pk_id_adress PRIMARY KEY(ID),
-    CONSTRAINT fk_id_type_adress FOREIGN KEY (ID_TYPE_ADRESS) references PM_TYPE_ADRESS(ID)
-);
-commit;
 
 create table PM_PERSON(
 	ID INT auto_increment,
@@ -80,6 +58,37 @@ create table PM_PERSON(
 	constraint fk_id_type_document FOREIGN KEY(ID_TYPE_DOCUMENT) REFERENCES PM_TYPE_DOCUMENT(ID)
 );
 
+COMMIT ;
+create table PM_PHONE(
+ID INT AUTO_INCREMENT,
+PHONE VARCHAR(30),
+AREA_CODE VARCHAR(20),
+ID_TYPE_PHONE INT,
+ID_COUNTRY INT,
+ID_PERSON int,
+CONSTRAINT pk_id_phone PRIMARY KEY(ID),
+constraint fk_type_phone FOREIGN KEY (ID_TYPE_PHONE) references PM_TYPE_PHONE(ID),
+constraint fk_country_phone FOREIGN KEY (ID_COUNTRY) references PM_COUNTRY(ID),
+CONSTRAINT fk_person_phone FOREIGN KEY (ID_PERSON) references PM_PERSON(ID)
+
+);
+
+commit;
+
+
+create table PM_ADRESS(
+	ID INT AUTO_INCREMENT,
+    STREET VARCHAR(30),
+    NUM INT,
+    APARTMENT VARCHAR(10),
+    ID_TYPE_ADRESS INT,
+	ID_PERSON INT,
+	ID_COUNTRY INT,
+	POST_CODE VARCHAR(10), ##CODIGO POSTAL
+    CONSTRAINT pk_id_adress PRIMARY KEY(ID),
+    CONSTRAINT fk_id_type_adress FOREIGN KEY (ID_TYPE_ADRESS) references PM_TYPE_ADRESS(ID),
+	CONSTRAINT fk_id_person_adress foreign key(ID_PERSON) references PM_PERSON(ID)
+);
 commit;
 
 create table PM_TYPE_VENDOR(
@@ -114,7 +123,7 @@ commit;
 create table PM_CLIENT(
 	ID INT auto_increment,
 	ID_TYPE_CLIENT INT,
-	ID_PERSONA INT,
+	ID_PERSON INT,
 	CONSTRAINT pk_id_client primary key(id),
 	CONSTRAINT fk_id_type_client foreign key (ID_TYPE_CLIENT) references PM_TYPE_CLIENT(ID), 
 	constraint fk_id_persona_client foreign key(ID_PERSONA) REFERENCES PM_PERSON(ID)
@@ -124,16 +133,13 @@ commit;
 create table PM_VENDOR(
 	ID INT auto_increment,
 	ID_TYPE_VENDOR INT,
-	ID_PERSONA INT,
+	ID_PERSON INT,
 	CONSTRAINT pk_id_vendor primary key(id),
 	CONSTRAINT fk_id_type_vendor foreign key (ID_TYPE_VENDOR) references PM_TYPE_VENDOR(ID), 
 	constraint fk_id_persona_vendor foreign key(ID_PERSONA) REFERENCES PM_PERSON(ID)
-);
+); 
 
-
-
-
-
+commit;
 /*
 	alter table pm
 */

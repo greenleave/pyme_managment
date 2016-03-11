@@ -1,10 +1,10 @@
-package ar.com.greenleave.pyme_managment.view.login;
+package ar.com.greenleave.pyme_managment.view.gestionPersona;
 
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 
-public class LoginFirstWindow {
+public class ABMClient {
 
 	private JFrame frame;
 
@@ -15,7 +15,7 @@ public class LoginFirstWindow {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					LoginFirstWindow window = new LoginFirstWindow();
+					ABMClient window = new ABMClient();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -27,7 +27,7 @@ public class LoginFirstWindow {
 	/**
 	 * Create the application.
 	 */
-	public LoginFirstWindow() {
+	public ABMClient() {
 		initialize();
 	}
 
