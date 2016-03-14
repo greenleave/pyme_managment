@@ -2,7 +2,7 @@
 <body>
   <h1>It's a open source ERP</h1>
   <h2>
-    <p>Members of this group</p>
+    <p>Members of this team</p>
     <ul>
       <li>Albarez Ernesto</li>
       <li>Bogado Sebastian</li>
