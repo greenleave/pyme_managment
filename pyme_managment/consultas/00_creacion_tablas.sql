@@ -54,11 +54,14 @@ create table PM_PERSON(
 	ID_TYPE_DOCUMENT INT,
 	DOCUMENT VARCHAR(20),
 	TYPE_PERSON varchar(20),
+	MAIN_ADRESS int,
 	constraint pk_id_person PRIMARY KEY (ID),
 	constraint fk_id_type_document FOREIGN KEY(ID_TYPE_DOCUMENT) REFERENCES PM_TYPE_DOCUMENT(ID)
 );
 
 COMMIT ;
+
+
 create table PM_PHONE(
 ID INT AUTO_INCREMENT,
 PHONE VARCHAR(30),
@@ -126,7 +129,7 @@ create table PM_CLIENT(
 	ID_PERSON INT,
 	CONSTRAINT pk_id_client primary key(id),
 	CONSTRAINT fk_id_type_client foreign key (ID_TYPE_CLIENT) references PM_TYPE_CLIENT(ID), 
-	constraint fk_id_persona_client foreign key(ID_PERSONA) REFERENCES PM_PERSON(ID)
+	constraint fk_id_persona_client foreign key(ID_PERSON) REFERENCES PM_PERSON(ID)
 );
 commit;
 
@@ -136,7 +139,7 @@ create table PM_VENDOR(
 	ID_PERSON INT,
 	CONSTRAINT pk_id_vendor primary key(id),
 	CONSTRAINT fk_id_type_vendor foreign key (ID_TYPE_VENDOR) references PM_TYPE_VENDOR(ID), 
-	constraint fk_id_persona_vendor foreign key(ID_PERSONA) REFERENCES PM_PERSON(ID)
+	constraint fk_id_persona_vendor foreign key(ID_PERSON) REFERENCES PM_PERSON(ID)
 ); 
 
 commit;
