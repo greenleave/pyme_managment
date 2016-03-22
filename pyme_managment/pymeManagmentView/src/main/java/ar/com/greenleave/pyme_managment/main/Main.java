@@ -10,11 +10,10 @@ public class Main {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-
 		CountryDTO country = new CountryDTO();
-		country.setCodPhone("042432");
-		country.setCountry("Estados Unidos");
-		country.setCountryCode("EEUU");
+		country.setCodPhone("+54");
+		country.setCountry("Argentina");
+		country.setCountryCode("ARG");
 		ServiceGestionCliente servicio = new ServiceGestionClienteImpl();
 		servicio.savePais(country);
 	}
