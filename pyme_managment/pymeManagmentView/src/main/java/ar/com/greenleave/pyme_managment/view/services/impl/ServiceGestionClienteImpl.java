@@ -90,4 +90,11 @@ public class ServiceGestionClienteImpl implements ServiceGestionCliente {
 			throw new GsonException();
 		}
 	}
+	
+	private Object readResponse(){
+		
+		
+		return null;
+	}
+	
 }
