@@ -38,3 +38,13 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+.btn-primary{
+  background-color: 39D25A !important;
+  border-color: 39D25A !important;
+}
+
+.btn-primary:hover{
+  background-color: 39D25A;
+  border-color: 39D25A;
+}
