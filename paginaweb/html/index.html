@@ -3,11 +3,19 @@
 	<HEAD>
 		<meta charset="utf-8" />
 		<title>Login</title>
+		<!-- Angular js -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js" />
+	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-resource.js" />
+
+	    <!-- custom .js-->
+	    <script src="../js/login.js"/>
+	    <!-- Custom css-->
 		<link rel="stylesheet" type="text/css" href="../css/custom_css/login.css">
+		<!-- Bootstrap-->
 		<link rel="stylesheet" type="text/css" href="../css/bootstrap-3.3.6/docs/dist/css/bootstrap.css" />
 	</HEAD>
-	<body>
-		<div class="container">
+	<body ng-app="login_pyme_managment">
+		<div ng-controller="login-controller" class="container">
 		<form class="form-signin">
 	        <h2 class="form-signin-heading">Pyme Managment</h2>
 	        <label for="inputEmail" class="sr-only">User</label>
