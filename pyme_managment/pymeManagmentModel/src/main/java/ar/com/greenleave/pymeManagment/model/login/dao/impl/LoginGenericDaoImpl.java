@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.impl.HibernateDaoHelper;
 import ar.com.greenleave.pymeManagment.model.login.dao.LoginGenericDao;
 
-@Repository(value="LoginGenericDao")
+@Repository(value="loginGenericDao")
 public class LoginGenericDaoImpl extends HibernateDaoHelper implements LoginGenericDao {
 
 	public void save(Object objeto) {

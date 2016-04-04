@@ -7,31 +7,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Type;
-
 @Entity
-@Table(name="PM_USER")
-public class User {
+@Table(name="PM_PERFIL")
+public class Perfil {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
-	
-	@Column(name="NAME")
+
+	@Column(name="NOMBRE")
 	private String name;
 	
-	@Column(name="username")
-	private String userName;
-	
-	@Column(name="password")
-	private String password;
+	public Long getId() {
+		return id;
+	}
 
-	@Column(name="email")
-	private String email;
-	
-	@Type(type = "org.hibernate.type.NumericBooleanType")
-	@Column(name="locked")
-	private Boolean isLocked;
-	
-	
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
 }

@@ -38,15 +38,12 @@
 		<property name="sessionFactory" ref="gestionClienteSessionFactory"></property>
 	</bean>
 
-
-
-
 	<bean id="LoginSessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="packagesToScan"
-			value="ar.com.greenleave.pymeManagment.model.gestionCliente" />
+			value="ar.com.greenleave.pymeManagment.model.login" />
 		<property name="dataSource">
-			<ref bean="PYMEDB" />
+			<ref bean="LOGINDB" />
 		</property>
 		<property name="hibernateProperties">
 			<props>
@@ -58,15 +55,12 @@
 			</props>
 		</property>
 	</bean>
-	<tx:annotation-driven transaction-manager="gestionClienteTransactionManager"
+	<tx:annotation-driven transaction-manager="loginTransactionManager"
 		proxy-target-class="true" />
-
-	<bean id="gestionClienteTransactionManager"
+	<bean id="loginTransactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory" ref="gestionClienteSessionFactory"></property>
+		<property name="sessionFactory" ref="loginSessionFactory"></property>
 	</bean>
-
-
 
 </beans>
 	
