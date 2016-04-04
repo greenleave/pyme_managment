@@ -37,5 +37,36 @@
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="gestionClienteSessionFactory"></property>
 	</bean>
+
+
+
+
+	<bean id="LoginSessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="packagesToScan"
+			value="ar.com.greenleave.pymeManagment.model.gestionCliente" />
+		<property name="dataSource">
+			<ref bean="PYMEDB" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.connection.autocommit">false</prop>
+				<prop key="hibernate.jdbc.use_get_generated_keys">true</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	<tx:annotation-driven transaction-manager="gestionClienteTransactionManager"
+		proxy-target-class="true" />
+
+	<bean id="gestionClienteTransactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="gestionClienteSessionFactory"></property>
+	</bean>
+
+
+
 </beans>
 	

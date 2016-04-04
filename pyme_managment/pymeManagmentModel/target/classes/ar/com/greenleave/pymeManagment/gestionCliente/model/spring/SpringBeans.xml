@@ -20,6 +20,10 @@
 		class="ar.com.greenleave.pymeManagment.model.gestionCliente.dao.impl.GestionClienteDaoImpl">
 		<property name="dataSource" ref="PYMEDB" />
 	</bean>
+	<bean id="LoginDao"
+		class="ar.com.greenleave.pymeManagment.model.login.dao.impl.LoginDaoImpl">
+		<property name="dataSource" ref="LOGINDB" />
+	</bean>
 	<!-- <bean id="gestionServiceWrapper" class="ar.com.nextel.nexus.stsuc.model.integracion.GestionServiceWrapper"> 
 		</bean> <bean id="permanenciaServiceWrapper" class="ar.com.nextel.nexus.stsuc.model.integracion.PermanenciaServiceWrapper"> 
 		</bean> <bean id="fileDownloadService" class="ar.com.nextel.nexus.stsuc.service.impl.FileDownloadServiceImpl"> 

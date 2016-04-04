@@ -15,7 +15,7 @@ public class HibernateDaoHelper {
 		return this.gestionClienteSessionFactory.getCurrentSession();
 	}
 
-	public void setSessionFactory(SessionFactory nexusSessionFactory) {
-		this.gestionClienteSessionFactory = nexusSessionFactory;
+	public void setSessionFactory(SessionFactory pymeManagmentSessionFactory) {
+		this.gestionClienteSessionFactory = pymeManagmentSessionFactory;
 	}
 }
