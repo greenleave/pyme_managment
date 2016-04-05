@@ -1,11 +1,15 @@
 package ar.com.greenleave.pymeManagment.model.login;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.hibernate.annotations.Type;
 
@@ -35,6 +39,10 @@ public class User {
 
 	@Column(name="PHONE")
 	private String phone;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="LAST_LOGIN")
+	private Date lastLogin;
 	
 	public Long getId() {
 		return id;
@@ -90,6 +98,14 @@ public class User {
 
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+
+	public Date getLastLogin() {
+		return lastLogin;
+	}
+
+	public void setLastLogin(Date lastLogin) {
+		this.lastLogin = lastLogin;
 	}
 	
 	

@@ -1,5 +1,6 @@
 package ar.com.greenleave.pymeManagment.model.login.dao.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -20,11 +21,21 @@ public class LoginDaoImpl extends LoginHibernateDaoHelper implements LoginDao {
 	@SuppressWarnings("unchecked")
 	public User login(String userName, String password) {
 		Criteria c=  getSession().createCriteria(User.class,"u");
+		//Añado las restricciones para poder comparar si existe el username y ese password
 		c.add(Restrictions.eq("userName", userName));
 		c.add(Restrictions.eq("password", password));
 		
 		List<User> usuarios=c.list();
-		return usuarios.size()==1? usuarios.get(0) : null;
+	
+		if(usuarios.size()==1){
+			 User user = usuarios.get(0);
+			 user.setLastLogin(new Date());
+			 getSession().update(user);
+			 return user;
+		}
+		return null;
+		
+		
 	}
 
 }
