@@ -37,5 +37,45 @@ public class LoginDaoImpl extends LoginHibernateDaoHelper implements LoginDao {
 		
 		
 	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public User getUserByEmail(String email) {
+		Criteria c = getSession().createCriteria(User.class, "u");
+		c.add(Restrictions.eq("u.email", email));
+		List<User> usuarios = c.list();
+		return usuarios.size()==1? usuarios.get(0) : null;
+	}
+
+	@SuppressWarnings("unchecked")
+	public User getUserByUserName(String userName) {
+		//La clase que voy a traer y el alias
+		Criteria c = getSession().createCriteria(User.class, "u");
+		c.add(Restrictions.eq("u.userName", userName));
+		List<User> usuarios = c.list();
+		return usuarios.size()==1? usuarios.get(0) : null;
+	}
+
+
+	public Boolean existUserByUserName(String userName) {
+		Criteria c = getSession().createCriteria(User.class, "u");
+		c.add(Restrictions.eq("u.userName", userName));
+		return c.list().size() == 1 ;
+	}
+
+
+	public Boolean existUserByEmail(String email) {
+		Criteria c = getSession().createCriteria(User.class, "u");
+		c.add(Restrictions.eq("u.email", email));
+		return c.list().size() == 1 ;
+	}
+
+
+	public Boolean existUserByName(String name) {
+		Criteria c = getSession().createCriteria(User.class, "u");
+		c.add(Restrictions.eq("u.name", name));
+		return c.list().size() == 1 ;
+	}
+	
 
 }

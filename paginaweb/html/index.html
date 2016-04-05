@@ -6,8 +6,8 @@
 		<!-- Angular js -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js" />
 	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-resource.js" />
-
-	    <!-- custom .js-->
+		
+		<!--Custom JS-->
 	    <script src="../js/login.js"/>
 	    <!-- Custom css-->
 		<link rel="stylesheet" type="text/css" href="../css/custom_css/login.css">
@@ -19,9 +19,9 @@
 		<form class="form-signin">
 	        <h2 class="form-signin-heading">Pyme Managment</h2>
 	        <label for="inputEmail" class="sr-only">User</label>
-	        <input id="inputEmail" class="form-control" placeholder="Usuario" required="" autofocus="" type="text">
+	        <input id="inputEmail" ng-model="userName"class="form-control" placeholder="Usuario" required="" autofocus="" type="text">
 	        <label for="inputPassword" class="sr-only">Contrase&ntilde;a</label>
-	        <input id="inputPassword" class="form-control" placeholder="Contrase&ntilde;a" required="" type="password">
+	        <input id="inputPassword" ng-model="password" class="form-control" placeholder="Contrase&ntilde;a" required="" type="password">
 	        <div class="checkbox">
 	          <label>
 	            <input value="record" type="checkbox"> Recordar usuario y contrase&ntilde;a

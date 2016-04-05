@@ -2,8 +2,10 @@ package ar.com.greenleave.pymeManagment.model.login.dao;
 
 import java.util.List;
 
+import ar.com.greenleave.pymeManagment.model.login.exception.GenerarUsuarioException;
+
 public interface LoginGenericDao {
-	public void save(Object objeto);
+	public void save(Object objeto) throws GenerarUsuarioException;
 	public void update(Object objeto);
 	public void delete(Object objeto);
 	public void saveOrUpdate(Object objeto);

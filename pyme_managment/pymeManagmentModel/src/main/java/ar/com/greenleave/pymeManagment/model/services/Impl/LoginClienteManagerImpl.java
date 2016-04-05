@@ -11,22 +11,27 @@ import ar.com.greenleave.pymeManagment.model.service.LoginClienteManager;
 
 @Transactional
 @Service("loginManager")
-public class LoginClienteManagerImpl implements LoginClienteManager{
+public class LoginClienteManagerImpl implements LoginClienteManager {
 
-	@Autowired 
+	@Autowired
 	private LoginGenericDao genericDao;
-	
+
 	@Autowired
 	private LoginDao loginDao;
-	
-	
+
 	public User login(String userName, String password) {
 		return loginDao.login(userName, password);
 	}
 
-	public String userRegistration(User person) {
-		genericDao.save(person);
-		return "Todo ok";
+	public User userRegistration(User person) {
+		try{
+			genericDao.save(person);
+			//Pude generar el usuario y no me puteo la base de datos
+			return person;
+		}catch(Exception e){
+			// me puteo la base de datos y probablemente este repetido el usuario
+			return null;
+		}
 	}
 
 }

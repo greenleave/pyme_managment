@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import ar.com.greenleave.pymeManagment.model.login.dao.LoginGenericDao;
 
-@Repository(value="loginGenericDao")
+@Repository(value = "loginGenericDao")
 public class LoginGenericDaoImpl extends LoginHibernateDaoHelper implements LoginGenericDao {
 
 	public void save(Object objeto) {
@@ -27,7 +27,7 @@ public class LoginGenericDaoImpl extends LoginHibernateDaoHelper implements Logi
 
 	@SuppressWarnings("unchecked")
 	public <T> T get(Class<T> clase, Long id) {
-		return (T)getSession().get(clase, id);
+		return (T) getSession().get(clase, id);
 	}
 
 	@SuppressWarnings("unchecked")

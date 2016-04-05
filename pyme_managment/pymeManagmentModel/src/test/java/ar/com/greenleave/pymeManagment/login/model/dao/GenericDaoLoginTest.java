@@ -16,6 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ar.com.greenleave.pymeManagment.model.login.Perfil;
 import ar.com.greenleave.pymeManagment.model.login.User;
 import ar.com.greenleave.pymeManagment.model.login.dao.LoginGenericDao;
+import ar.com.greenleave.pymeManagment.model.login.exception.GenerarUsuarioException;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/ar/com/greenleave/pymeManagment/gestionCliente/model/spring/ApplicationContext.xml" })
@@ -36,7 +37,12 @@ public class GenericDaoLoginTest extends AbstractTransactionalJUnit4SpringContex
 	public void testInsertPerfil(){
 		Perfil perfil = new Perfil();
 		perfil.setName("Administrador");
-		genericDao.save(perfil);
+		try {
+			genericDao.save(perfil);
+		} catch (GenerarUsuarioException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Test
@@ -48,7 +54,12 @@ public class GenericDaoLoginTest extends AbstractTransactionalJUnit4SpringContex
 		usuario.setName("Sebastian Emanuel Enrique Bogado");
 		usuario.setUserName("seeb");
 		usuario.setPassword("seeb143");
-		genericDao.save(usuario);
+		try {
+			genericDao.save(usuario);
+		} catch (GenerarUsuarioException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
