@@ -21,7 +21,7 @@
 		<property name="dataSource" ref="PYMEDB" />
 	</bean>
 	
-	<bean id="LoginDao"
+	<bean id="loginDao"
 		class="ar.com.greenleave.pymeManagment.model.login.dao.impl.LoginDaoImpl">
 		<property name="dataSource" ref="LOGINDB" />
 	</bean>

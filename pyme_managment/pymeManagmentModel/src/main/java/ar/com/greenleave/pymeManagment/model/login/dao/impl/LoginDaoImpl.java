@@ -8,13 +8,13 @@ import ar.com.greenleave.pymeManagment.model.login.User;
 import ar.com.greenleave.pymeManagment.model.login.dao.LoginDao;
 
 @Repository(value = "loginDao")
-public class LoginDaoImpl implements LoginDao {
+public class LoginDaoImpl extends LoginHibernateDaoHelper implements LoginDao {
 
 	@SuppressWarnings("unused")
 	private final static Logger logger = Logger.getLogger(GestionClienteDaoImpl.class);
 	
-	public User Login(String userName, String password) {
-		 
+	public User login(String userName, String password) {
+		
 		return null;
 	}
 

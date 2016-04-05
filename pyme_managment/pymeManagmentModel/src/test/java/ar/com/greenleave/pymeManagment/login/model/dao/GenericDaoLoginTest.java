@@ -14,6 +14,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import ar.com.greenleave.pymeManagment.model.login.Perfil;
+import ar.com.greenleave.pymeManagment.model.login.User;
 import ar.com.greenleave.pymeManagment.model.login.dao.LoginGenericDao;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -32,10 +33,22 @@ public class GenericDaoLoginTest extends AbstractTransactionalJUnit4SpringContex
 	
 	@Test
 	@Rollback(false)
-	public void testInsertPermiso(){
+	public void testInsertPerfil(){
 		Perfil perfil = new Perfil();
-		perfil.setNombre("Administrador");
+		perfil.setName("Administrador");
 		genericDao.save(perfil);
+	}
+	
+	@Test
+	@Rollback(false)
+	public void testInsertUser(){
+		User usuario = new User();
+		usuario.setEmail("seebogado@gmail.com");
+		usuario.setIsLocked(false);
+		usuario.setName("Sebastian Emanuel Enrique Bogado");
+		usuario.setUserName("seeb");
+		usuario.setPassword("seeb143");
+		genericDao.save(usuario);
 	}
 
 }
