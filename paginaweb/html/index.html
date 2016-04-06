@@ -1,35 +1,28 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html>
-	<HEAD>
-		<meta charset="utf-8" />
-		<title>Login</title>
-		<!-- Angular js -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js" />
-	    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-resource.js" />
-		
-		<!--Custom JS-->
-	    <script src="../js/login.js"/>
-	    <!-- Custom css-->
-		<link rel="stylesheet" type="text/css" href="../css/custom_css/login.css">
-		<!-- Bootstrap-->
-		<link rel="stylesheet" type="text/css" href="../css/bootstrap-3.3.6/docs/dist/css/bootstrap.css" />
-	</HEAD>
-	<body ng-app="login_pyme_managment">
-		<div ng-controller="login-controller" class="container">
-		<form class="form-signin">
-	        <h2 class="form-signin-heading">Pyme Managment</h2>
-	        <label for="inputEmail" class="sr-only">User</label>
-	        <input id="inputEmail" ng-model="userName"class="form-control" placeholder="Usuario" required="" autofocus="" type="text">
-	        <label for="inputPassword" class="sr-only">Contrase&ntilde;a</label>
-	        <input id="inputPassword" ng-model="password" class="form-control" placeholder="Contrase&ntilde;a" required="" type="password">
-	        <div class="checkbox">
-	          <label>
-	            <input value="record" type="checkbox"> Recordar usuario y contrase&ntilde;a
-	          </label>
-	        </div>
-	        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-	      </form></div> <!-- /container -->
-	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	    <script src="Signin%20Template%20for%20Bootstrap_archivos/ie10-viewport-bug-workaround.js"></script>
-	</body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/custom_css/main.css" rel="stylesheet" />
+    
+    <!-- Include the AngularJS library -->
+    <script src="https://code.angularjs.org/1.3.1/angular.min.js" />
+    <script src="https://code.angularjs.org/1.3.1/angular-route.js"/>
+    <!--
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
+       <!-- Modules -->
+    <script src="../js/pymeManagment.js"></script>
+
+    <!-- Controllers -->
+    <script src="../js/controller/loginController.js"></script>
+
+    <!-- Services 
+    <script src="../js/services/reporte.js"></script>-->
+
+    <!-- Directives -->
+    <title>Este es el index</title>
+  </head>
+  <body ng-app="pymeManagmentApp">
+    <div class="main">
+    </div>
+  </body>
 </html>

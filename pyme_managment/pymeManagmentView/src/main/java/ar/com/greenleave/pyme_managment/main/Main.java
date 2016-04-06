@@ -11,9 +11,9 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		CountryDTO country = new CountryDTO();
-		country.setCodPhone("+67");
-		country.setCountry("Austraas");
-		country.setCountryCode("WEE");
+		country.setCodPhone("+54");
+		country.setCountry("Argentina");
+		country.setCountryCode("ARG");
 		ServiceGestionCliente servicio = new ServiceGestionClienteImpl();
 		servicio.savePais(country);
 	}
