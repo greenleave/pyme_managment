@@ -1,28 +1,25 @@
 <!doctype html>
-<html>
+<html ng-app="pymeManagmentApp">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/custom_css/main.css" rel="stylesheet" />
+
     
-    <!-- Include the AngularJS library -->
-    <script src="https://code.angularjs.org/1.3.1/angular.min.js" />
-    <script src="https://code.angularjs.org/1.3.1/angular-route.js"/>
-    <!--
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
-       <!-- Modules -->
-    <script src="../js/pymeManagment.js"></script>
-
     <!-- Controllers -->
-    <script src="../js/controller/loginController.js"></script>
-
-    <!-- Services 
-    <script src="../js/services/reporte.js"></script>-->
+    <!-- <script src="../js/controller/loginController.js"></script> -->
 
     <!-- Directives -->
     <title>Este es el index</title>
   </head>
-  <body ng-app="pymeManagmentApp">
-    <div class="main">
-    </div>
+  <body>
+    <div ng-view class="main"></div>
+    <!-- Include the AngularJS library -->
+    <<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js" />
+    <<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.js" />
+    <<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-cookies.js" />
+    <!--
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
+
+    <script src="../js/pymeManagment.js"></script>
   </body>
 </html>
