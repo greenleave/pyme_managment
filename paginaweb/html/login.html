@@ -30,7 +30,14 @@
   </head>
 
   <body>
-    <!-- <div class="container" ng-controller="loginController"> -->
+    <div ng-contoller="loginCtrl">
+      <form action="/" id="myLogin">
+        Username:<input type="text" name="username"  ng-model="username" id="username"><br/>
+        Password: <input type="password" name="password" ng-model="password" id="password"><br/>
+        <button type="button" ng-click="submit()">Login</button>
+      </form>
+    </div>
+    <!-- <div class="container" ng-controller="loginController"> 
     <div class="container"
       <form class="form-signin">
         <h2 class="form-signin-heading">Pyme Managment</h2>

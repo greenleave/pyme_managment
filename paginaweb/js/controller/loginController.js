@@ -1,4 +1,4 @@
-angular.module('pymeManagmentApp').controller('loginController', functionLoginController);
+/*angular.module('pymeManagmentApp').controller('loginController', functionLoginController);
 
 function functionLoginController($scope) {
     $scope.submit = function(){
@@ -7,3 +7,4 @@ function functionLoginController($scope) {
     	alert("Hola");
     }
   }
+*/

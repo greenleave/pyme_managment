@@ -1,25 +1,12 @@
-<!doctype html>
-<html ng-app="pymeManagmentApp">
+<!DOCTYPE HTML>
+<html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../css/custom_css/main.css" rel="stylesheet" />
-
-    
-    <!-- Controllers -->
-    <!-- <script src="../js/controller/loginController.js"></script> -->
-
-    <!-- Directives -->
-    <title>Este es el index</title>
+    <title>Pyme Managment</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular-route.js"></script>
+    <script type="text/javascript" src="../js/controller.js"></script>
   </head>
-  <body>
-    <div ng-view class="main"></div>
-    <!-- Include the AngularJS library -->
-    <<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.js" />
-    <<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-route.js" />
-    <<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-cookies.js" />
-    <!--
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
-
-    <script src="../js/pymeManagment.js"></script>
+  <body ng-app="mainApp">
+    <div ng-view></div>
   </body>
 </html>
