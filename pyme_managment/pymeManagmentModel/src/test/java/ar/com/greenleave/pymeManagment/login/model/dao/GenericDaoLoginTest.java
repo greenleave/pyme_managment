@@ -49,11 +49,11 @@ public class GenericDaoLoginTest extends AbstractTransactionalJUnit4SpringContex
 	@Rollback(false)
 	public void testInsertUser(){
 		User usuario = new User();
-		usuario.setEmail("seebogado@gmail.com");
+		usuario.setEmail("anonymus.sheep@yahoo.com");
 		usuario.setIsLocked(false);
-		usuario.setName("Sebastian Emanuel Enrique Bogado");
-		usuario.setUserName("seeb");
-		usuario.setPassword("seeb143");
+		usuario.setName("Anonymus Sheep");
+		usuario.setUserName("as");
+		usuario.setPassword("12345678a");
 		try {
 			genericDao.save(usuario);
 		} catch (GenerarUsuarioException e) {

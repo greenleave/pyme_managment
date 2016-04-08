@@ -15,6 +15,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import com.google.gson.Gson;
 
 import ar.com.greenleave.pyme_managment.view.dto.CountryDTO;
+import ar.com.greenleave.pyme_managment.view.dto.UserDTO;
 import ar.com.greenleave.pyme_managment.view.exception.GsonException;
 import ar.com.greenleave.pyme_managment.view.services.ServiceGestionCliente;
 
@@ -26,7 +27,8 @@ public class ServiceGestionClienteImpl implements ServiceGestionCliente {
 	@Override
 	public void savePais(CountryDTO country) {
 		try {
-			HttpResponse response = httpClient.execute(getPostRequest("gestionCliente/createNewCountry", country));
+			HttpResponse response = httpClient
+					.execute(getPostRequest("pymeManagment/gestionCliente/createNewCountry", country));
 			if (response.getStatusLine().getStatusCode() != 201) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatusLine().getStatusCode());
 			}
@@ -72,14 +74,13 @@ public class ServiceGestionClienteImpl implements ServiceGestionCliente {
 		}
 		return null;
 	}
-	
-	
-	private HttpPost getPostRequest(String path){
-		return new HttpPost(HOST_PAGE+path);
+
+	private HttpPost getPostRequest(String path) {
+		return new HttpPost(HOST_PAGE + path);
 	}
-	
-	private HttpPost getPostRequest(String path, Object object)throws GsonException{
-		HttpPost httpPost= new HttpPost(HOST_PAGE + path);
+
+	private HttpPost getPostRequest(String path, Object object) throws GsonException {
+		HttpPost httpPost = new HttpPost(HOST_PAGE + path);
 		StringEntity input;
 		try {
 			input = new StringEntity(gson.toJson(object));
@@ -90,11 +91,33 @@ public class ServiceGestionClienteImpl implements ServiceGestionCliente {
 			throw new GsonException();
 		}
 	}
-	
-	private Object readResponse(){
-		
-		
+
+	private Object readResponse() {
+
 		return null;
 	}
-	
+
+	@Override
+	public void login(UserDTO usuario) {
+		try {
+			HttpResponse response = httpClient
+					.execute(getPostRequest("userCenter/login", usuario));
+			if (response.getStatusLine().getStatusCode() != 201) {
+				throw new RuntimeException("Failed : HTTP error code : " + response.getStatusLine().getStatusCode());
+			}
+			BufferedReader br = new BufferedReader(new InputStreamReader((response.getEntity().getContent())));
+			String output;
+			System.out.println("Output from Server .... \n");
+			while ((output = br.readLine()) != null) {
+				System.out.println(output);
+			}
+			httpClient.getConnectionManager().shutdown();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (GsonException e) {
+			e.printStackTrace();
+		}
+	}
 }

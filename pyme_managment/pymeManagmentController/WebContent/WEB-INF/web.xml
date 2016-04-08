@@ -47,8 +47,7 @@
 	<servlet-mapping>
 		<servlet-name>gestionClientesService</servlet-name>
 		<url-pattern>/*</url-pattern>
-	</servlet-mapping>	
-
+	</servlet-mapping>
 	<!-- <display-name>Archetype Created Web Application</display-name> <context-param> 
 		<param-name>contextConfigLocation</param-name> <param-value>classpath:ar/com/greenleave/pymeManagment/controller/applicationContext.xml</param-value> 
 		</context-param> <context-param> <param-name>resteasy.resources</param-name> 

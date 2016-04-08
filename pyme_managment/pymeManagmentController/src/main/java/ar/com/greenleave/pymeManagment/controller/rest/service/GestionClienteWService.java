@@ -19,7 +19,7 @@ import ar.com.greenleave.pymeManagment.controller.GestionClienteController;
 * @version v1.0
 */
 
-@Path("/")
+@Path("/pymeManagment")
 @Component
 public class GestionClienteWService {
 	
