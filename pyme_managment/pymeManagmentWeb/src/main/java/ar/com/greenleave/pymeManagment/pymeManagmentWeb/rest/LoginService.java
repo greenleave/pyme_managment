@@ -10,13 +10,13 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.LoginController;
+import ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.UserCenterController;
 
 @Path("/userCenter")
 @Component
 public class LoginService {
 	@Autowired
-	LoginController loginController;
+	UserCenterController loginController;
 	
 	public static final String CHARSET_UTF8 = "; charset=utf-8";
 	

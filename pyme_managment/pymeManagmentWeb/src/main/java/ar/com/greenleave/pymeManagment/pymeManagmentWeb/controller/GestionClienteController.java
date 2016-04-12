@@ -3,11 +3,11 @@ package ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller;
 public interface GestionClienteController {
 
 	//Clientes
-	public String getClientes();
-	public void getCliente(String json);
-	public void crearCliente(String json);
-	public void modificarCliente(String json);
-	public void eliminarCliente(String json);
+	public String getClients();
+	public void getClient(String json);
+	public void createClient(String json);
+	public void updateCliente(String json);
+	public void deleteCliente(String json);
 	
 	//	Person
 	public String getPersonas();
@@ -17,14 +17,24 @@ public interface GestionClienteController {
 	public void	eliminarPersona(String json);
 	
 	
-	//Country
+	//	Country
 	public String getCountries();
 	public String getContry(String json);
 	public void createCountry(String json);
 	public void updateCountry(String json);
 	public void deleteCountry(String json);
 
-	
-	
-	
+	//	TypeAdress
+	public String getTypesAdress();
+	public String getTypeAdress();
+	public void createTypeAdress(String json);
+	public void updateTypeAdress(String json);
+	public void deleteTypeAdress(String json);
+
+	//  TypeDocument
+	public String getTypesDocument();
+	public String getTypeDocument(String json);
+	public void createTypeDocument(String json);
+	public void updateTypeDocument(String json);
+	public void deleteTypeDocument(String json);	
 }
