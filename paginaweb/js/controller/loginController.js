@@ -6,7 +6,7 @@ app.controller('loginController',['$scope','$location', '$http', function($scope
 
 
 			// $http.post('http://localhost:8080/pymeManagmentController/userCenter/login');
-			$http.({
+			$http({
 				method: 'POST',
 				url: 'http://localhost:8080/pymeManagmentController/userCenter/login',
 				
