@@ -26,7 +26,7 @@ public class GestionClienteService {
 	@Consumes(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	@Produces(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	public Response getClientes(){
-		String result = gestionClienteController.getClientes();
+		String result = gestionClienteController.getClients();
 		return Response.status(201).entity(result).build();
 	}
 	

@@ -14,14 +14,18 @@ public interface GestionClienteManager {
 	List<Country> getAllCountries();
 	Country getCountryById(Long id);
 	TypeOfDocument getTypeDocumentById(Long id);
-	void updateCountry(Country country);
-	void updateTypeOfDocument(TypeOfDocument typeDocument);
+	
+	
 	void saveCountry(Country country);
 	void savePerson(Person person);
 	void savePhone(Phone phone);
 	void saveTypeAdress(TypeOfAdress adress);
 	void saveTypeDocument(TypeOfDocument document);
 	void saveTypePhone(TypeOfPhone typePhone);
+	
+	void updateCountry(Country country);
+	void updateTypeOfDocument(TypeOfDocument typeDocument);
+	
 	
 	
 
