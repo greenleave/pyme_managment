@@ -1,0 +1,10 @@
+ar\com\greenleave\pyme_managment\view\gestionPersona\ABMClient$1.class
+ar\com\greenleave\pyme_managment\dto\PermisoDTO.class
+ar\com\greenleave\pyme_managment\view\services\impl\ServiceGestionClienteImpl.class
+ar\com\greenleave\pyme_managment\view\login\Login.class
+ar\com\greenleave\pyme_managment\view\services\ServiceGestionCliente.class
+ar\com\greenleave\pyme_managment\view\dto\UserDTO.class
+ar\com\greenleave\pyme_managment\main\Main.class
+ar\com\greenleave\pyme_managment\view\dto\PersonToRegistDTO.class
+ar\com\greenleave\pyme_managment\view\dto\CountryDTO.class
+ar\com\greenleave\pyme_managment\view\gestionPersona\ABMClient.class
