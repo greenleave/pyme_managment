@@ -32,3 +32,4 @@ webapp/
 !war/WEB-INF/web.xml
 stsucView/war
 
+/target/
