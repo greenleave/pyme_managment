@@ -1,13 +1,13 @@
-package ar.com.greenleave.pymeManagment.model.gestionCliente.dao.impl;
+package ar.com.greenleave.pymeManagment.model.gestionPyme.dao.impl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.GestionClienteGenericDao;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeGenericDao;
 
 @Repository(value="gestionClienteGenericDao")
-public class GestionClienteGenericDaoImpl extends HibernateDaoHelper implements GestionClienteGenericDao {
+public class GestionClienteGenericDaoImpl extends HibernateDaoHelper implements GestionPymeGenericDao {
 
 	public void save(Object objeto) {
 		getSession().save(objeto);

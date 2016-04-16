@@ -8,7 +8,7 @@ import org.hibernate.criterion.Restrictions;
 import org.jboss.logging.Logger;
 import org.springframework.stereotype.Repository;
 
-import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.impl.GestionClienteDaoImpl;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.impl.GestionPymeDaoImpl;
 import ar.com.greenleave.pymeManagment.model.login.User;
 import ar.com.greenleave.pymeManagment.model.login.dao.LoginDao;
 
@@ -16,7 +16,7 @@ import ar.com.greenleave.pymeManagment.model.login.dao.LoginDao;
 public class LoginDaoImpl extends LoginHibernateDaoHelper implements LoginDao {
 
 	@SuppressWarnings("unused")
-	private final static Logger logger = Logger.getLogger(GestionClienteDaoImpl.class);
+	private final static Logger logger = Logger.getLogger(GestionPymeDaoImpl.class);
 	
 	@SuppressWarnings("unchecked")
 	public User login(String userName, String password) {

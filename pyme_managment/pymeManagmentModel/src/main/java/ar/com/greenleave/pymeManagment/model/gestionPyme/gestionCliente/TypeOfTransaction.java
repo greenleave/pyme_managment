@@ -1,4 +1,4 @@
-package ar.com.greenleave.pymeManagment.model.gestionCliente;
+package ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente;
 
 public enum TypeOfTransaction {
 	/**

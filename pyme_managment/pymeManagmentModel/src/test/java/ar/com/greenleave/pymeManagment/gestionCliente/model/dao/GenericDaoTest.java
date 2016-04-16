@@ -15,8 +15,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Country;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.GestionClienteGenericDao;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeGenericDao;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/ar/com/greenleave/pymeManagment/gestionCliente/model/spring/ApplicationContext.xml" })
@@ -26,7 +26,7 @@ import ar.com.greenleave.pymeManagment.model.gestionCliente.dao.GestionClienteGe
 public class GenericDaoTest extends AbstractTransactionalJUnit4SpringContextTests {
 
 	@Autowired
-	private GestionClienteGenericDao genericDao;
+	private GestionPymeGenericDao genericDao;
 	
 	@Autowired
 	public void setDataSource(@Qualifier("PYMEDB") DataSource dataSource) {

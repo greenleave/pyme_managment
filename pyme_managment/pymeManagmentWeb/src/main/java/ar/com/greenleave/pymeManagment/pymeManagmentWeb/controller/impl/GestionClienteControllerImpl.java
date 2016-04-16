@@ -2,17 +2,17 @@ package ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import ar.com.greenleave.pymeManagment.model.service.GestionClienteManager;
+import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
 import ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.GestionClienteController;
 
 public class GestionClienteControllerImpl implements GestionClienteController{
 
 	@Autowired
-	GestionClienteManager gestionClienteService;
+	GestionPymeManager gestionPymeService;
 	
 	@Override
 	public String getClients() {
-		gestionClienteService.getClients();
+		gestionPymeService.getClients();
 		return null;
 	}
 

@@ -1,8 +1,8 @@
-package ar.com.greenleave.pymeManagment.model.gestionCliente.dao;
+package ar.com.greenleave.pymeManagment.model.gestionPyme.dao;
 
 import java.util.List;
 
-public interface GestionClienteGenericDao {
+public interface GestionPymeGenericDao {
 
 	public void save(Object objeto);
 	public void update(Object objeto);

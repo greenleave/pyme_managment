@@ -1,4 +1,4 @@
-package ar.com.greenleave.pymeManagment.model.gestionCliente.dao.impl;
+package ar.com.greenleave.pymeManagment.model.gestionPyme.dao.impl;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

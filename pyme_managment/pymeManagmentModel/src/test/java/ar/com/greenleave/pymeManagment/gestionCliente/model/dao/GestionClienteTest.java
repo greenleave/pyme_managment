@@ -17,14 +17,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Adress;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Country;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Person;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Phone;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfAdress;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfDocument;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfPerson;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfPhone;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Adress;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Phone;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfAdress;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDocument;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPerson;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPhone;
 import ar.com.greenleave.pymeManagment.model.service.GestionClienteManager;
 
 @RunWith(SpringJUnit4ClassRunner.class)

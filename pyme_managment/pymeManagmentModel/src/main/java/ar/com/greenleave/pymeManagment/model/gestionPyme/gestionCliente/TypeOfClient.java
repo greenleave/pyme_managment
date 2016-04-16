@@ -1,4 +1,4 @@
-package ar.com.greenleave.pymeManagment.model.gestionCliente;
+package ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,16 +8,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="PM_TYPE_VENDOR")
-public class TypeOfVendor {
-
+@Table(name="PM_TYPE_CLIENT")
+public class TypeOfClient {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	@Column(name="ID")
 	private Long id;
 	@Column(name="DESCRIPTION")
-	private String typeOfVendor;
-	
+	private String typeOfClient;
 	
 	
 	public Long getId() {
@@ -26,10 +24,14 @@ public class TypeOfVendor {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getTypeOfVendor() {
-		return typeOfVendor;
+	public String getTypeOfClient() {
+		return typeOfClient;
 	}
-	public void setTypeOfVendor(String typeOfVendor) {
-		this.typeOfVendor = typeOfVendor;
+	public void setTypeOfClient(String typeOfClient) {
+		this.typeOfClient = typeOfClient;
 	}
+	
+	
+	
+	
 }
