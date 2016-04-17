@@ -18,6 +18,9 @@
 	<bean id="GestionClienteController"
 		class="ar.com.greenleave.pymeManagment.controller.impl.GestionClienteControllerImpl">
 	</bean>
+	<bean id="LoginController"
+		class="ar.com.greenleave.pymeManagment.controller.impl.LoginControllerImpl">
+	</bean>
 	<!-- <bean id="mapperDozer" class="ar.com.nextel.nexus.stsuc.server.utils.MapperExtended"> 
 		<property name="mappingFiles"> <list> <value>ar/com/nextel/nexus/view/Mapping-Dozer.xml</value> 
 		</list> </property> </bean> -->

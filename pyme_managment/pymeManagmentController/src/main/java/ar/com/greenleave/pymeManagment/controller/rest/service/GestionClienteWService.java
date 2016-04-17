@@ -1,6 +1,7 @@
 package ar.com.greenleave.pymeManagment.controller.rest.service;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -19,7 +20,7 @@ import ar.com.greenleave.pymeManagment.controller.GestionClienteController;
 * @version v1.0
 */
 
-@Path("/")
+@Path("/pymeManagment")
 @Component
 public class GestionClienteWService {
 	
@@ -28,7 +29,12 @@ public class GestionClienteWService {
 	
 	public static final String CHARSET_UTF8 = "; charset=utf-8";
 	
-	
+	@GET
+	@Path("/index")
+	public Response getIndex(){
+		
+		return null;
+	}
 	
 	@POST
 	@Path("/gestionCliente/createNewCountry")

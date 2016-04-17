@@ -11,7 +11,7 @@ import ar.com.greenleave.pymeManagment.model.service.GestionClienteManager;
 /**
  * @since 11/03/2016
  * @author Sebastian Emanuel Enrique Bogado
- * @mailTo: anonymus.sheep@gmail.com
+ * @mailTo: anonymus.sheep@yahoo.com
  * @version v1.0
  */
 

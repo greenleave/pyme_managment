@@ -3,7 +3,7 @@
 <mappings xmlns="http://dozer.sourceforge.net" xsi:schemaLocation="http://dozer.sourceforge.net
 http://dozer.sourceforge.net/schema/beanmapping.xsd"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-   <mapping> 
+   <!-- <mapping> 
     <class-a>ar.com.nextel.nexus.stsuc.model.GestionServicioTecnico</class-a>
     <class-b>ar.com.nextel.nexus.stsuc.client.view.dto.GestionInboxDTO</class-b>   
     <field>
@@ -42,7 +42,7 @@ http://dozer.sourceforge.net/schema/beanmapping.xsd"
       <a>fechaEntregaEstipulada</a>
       <b>fechaEntregaEstipulada</b>
     </field>
-  </mapping>  
+  </mapping>   -->
 <!--   	<configuration>-->
 <!--		<date-format>dd/MM/yyyy</date-format>-->
 <!--	</configuration>-->

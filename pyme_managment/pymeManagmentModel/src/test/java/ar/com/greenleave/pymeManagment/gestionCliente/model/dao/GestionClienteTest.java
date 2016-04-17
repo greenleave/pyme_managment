@@ -17,66 +17,66 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Adress;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Country;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Person;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.Phone;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfAdress;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfDocument;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfPerson;
-import ar.com.greenleave.pymeManagment.model.gestionCliente.TypeOfPhone;
-import ar.com.greenleave.pymeManagment.model.service.GestionClienteManager;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Adress;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Phone;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfAdress;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDocument;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPerson;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPhone;
+import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"/ar/com/greenleave/pymeManagment/gestionCliente/model/spring/ApplicationContext.xml" })
 @Transactional
-@TransactionConfiguration(transactionManager = "gestionClienteTransactionManager", defaultRollback = true)
+@TransactionConfiguration(transactionManager = "gestionPymeTransactionManager", defaultRollback = true)
 
 public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContextTests {
 
 	@Autowired
-	private GestionClienteManager gestionClienteManager;
+	private GestionPymeManager gestionPymeManager;
 
 	@Autowired
 	public void setDataSource(@Qualifier("PYMEDB") DataSource dataSource) {
 		super.setDataSource(dataSource);
 	}
 
-	@Test
-	@Rollback(false)
-	public void testInsertCountry() {
-		Country country = new Country();
-		country.setCountry("Brasil");
-		country.setCountryCode("BRZ");
-		gestionClienteManager.saveCountry(country);
-	}
+//	@Test
+//	@Rollback(false)
+//	public void testInsertCountry() {
+//		Country country = new Country();
+//		country.setCountry("Brasil");
+//		country.setCountryCode("BRZ");
+//		gestionPymeManager.saveCountry(country);
+//	}
 
-	@Test
-	public void testGetCountryById() {
-		Country c = gestionClienteManager.getCountryById(1L);
-		Assert.assertNotNull(c);
-	}
+//	@Test
+//	public void testGetCountryById() {
+//		Country c = gestionPymeManager.getCountryById(1L);
+//		Assert.assertNotNull(c);
+//	}
 
-	@Test
-	@Rollback(false)
-	public void testUpdateCountry() {
-		Country country = gestionClienteManager.getCountryById(1L);
-		country.setCodPhone("+54");
-		gestionClienteManager.updateCountry(country);
-	}
+//	@Test
+//	@Rollback(false)
+//	public void testUpdateCountry() {
+//		Country country = gestionPymeManager.getCountryById(1L);
+//		country.setCodPhone("+54");
+//		gestionPymeManager.updateCountry(country);
+//	}
 
 	@Test
 	public void testGetAllCountries() {
-		gestionClienteManager.getAllCountries();
+		gestionPymeManager.getCountries(null);
 	}
 
 	@Test
 	@Rollback(false)
 	public void testInsertTypeDocument() {
 		TypeOfDocument document = new TypeOfDocument();
-		document.setCountry(gestionClienteManager.getCountryById(1L));
+		document.setCountry(gestionPymeManager.getCountryById(1L));
 		document.setTypeDocument("D.N.I.");
-		gestionClienteManager.saveTypeDocument(document);
+		gestionPymeManager.saveTypeDocument(document);
 	}
 
 	@Test
@@ -87,12 +87,12 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 		c.setId(2L);
 		document.setCountry(c);
 		document.setTypeDocument("D.B.");
-		gestionClienteManager.saveTypeDocument(document);
+		gestionPymeManager.saveTypeDocument(document);
 	}
 
 	@Test
 	public void testGetTypeDocumentById() {
-		TypeOfDocument typeDocument = gestionClienteManager.getTypeDocumentById(1L);
+		TypeOfDocument typeDocument = gestionPymeManager.getTypeDocumentById(1L);
 		Assert.assertNotNull(typeDocument);
 		Assert.assertNotNull(typeDocument.getCountry());
 	}
@@ -100,15 +100,15 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 	@Test
 	@Rollback(false)
 	public void testUpdateTypeDocument() {
-		TypeOfDocument typeDocument = gestionClienteManager.getTypeDocumentById(2L);
+		TypeOfDocument typeDocument = gestionPymeManager.getTypeDocumentById(2L);
 		typeDocument.setTypeDocument("R.G.");
-		gestionClienteManager.updateTypeOfDocument(typeDocument);
+		gestionPymeManager.updateTypeOfDocument(typeDocument);
 	}
 
 	@Test
 	@Rollback(false)
 	public void testDeleteTypeDocumentById() {
-		gestionClienteManager.deleteTypeDocumentById(2L);
+		gestionPymeManager.deleteTypeDocumentById(2L);
 	}
 
 	@Test
@@ -116,7 +116,7 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 	public void testInsertarTypePhone() {
 		TypeOfPhone typePhone = new TypeOfPhone();
 		typePhone.setTypePhone("CELULAR");
-		gestionClienteManager.saveTypePhone(typePhone);
+		gestionPymeManager.saveTypePhone(typePhone);
 	}
 	
 	@Test
@@ -124,7 +124,7 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 	public void testInsertarTypePhone2() {
 		TypeOfPhone typePhone = new TypeOfPhone();
 		typePhone.setTypePhone("LABORAL");
-		gestionClienteManager.saveTypePhone(typePhone);
+		gestionPymeManager.saveTypePhone(typePhone);
 	}
 
 	@Test
@@ -132,7 +132,7 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 	public void testInsertarTypeAdress() {
 		TypeOfAdress adress = new TypeOfAdress();
 		adress.setTypeAdress("Domicilio Legal");
-		gestionClienteManager.saveTypeAdress(adress);
+		gestionPymeManager.saveTypeAdress(adress);
 	}
 
 	@Test
@@ -144,7 +144,7 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 		Phone phone = new Phone();
 		phone.setTypePhone(typePhone);
 		phone.setPhone("01162961073");
-		gestionClienteManager.savePhone(phone);
+		gestionPymeManager.savePhone(phone);
 //		phones.add(phone);
 	
 	}
@@ -189,7 +189,7 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 		typeOfDocument.setId(1L);
 		person.setTypeOfDocument(typeOfDocument);
 
-		gestionClienteManager.savePerson(person);
+		gestionPymeManager.savePerson(person);
 	}
 
 }

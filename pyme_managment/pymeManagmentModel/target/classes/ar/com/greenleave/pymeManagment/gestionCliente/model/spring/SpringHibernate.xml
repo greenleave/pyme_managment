@@ -13,10 +13,10 @@
     http://www.springframework.org/schema/tx 
     http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
-	<bean id="gestionClienteSessionFactory"
+	<bean id="gestionPymeSessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="packagesToScan"
-			value="ar.com.greenleave.pymeManagment.model.gestionCliente" />
+			value="ar.com.greenleave.pymeManagment.model.gestionPyme" />
 		<property name="dataSource">
 			<ref bean="PYMEDB" />
 		</property>
@@ -30,12 +30,37 @@
 			</props>
 		</property>
 	</bean>
-	<tx:annotation-driven transaction-manager="gestionClienteTransactionManager"
+	<tx:annotation-driven transaction-manager="gestionPymeTransactionManager"
 		proxy-target-class="true" />
 
-	<bean id="gestionClienteTransactionManager"
+	<bean id="gestionPymeTransactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
-		<property name="sessionFactory" ref="gestionClienteSessionFactory"></property>
+		<property name="sessionFactory" ref="gestionPymeSessionFactory"></property>
 	</bean>
+
+	<bean id="loginSessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="packagesToScan"
+			value="ar.com.greenleave.pymeManagment.model.login" />
+		<property name="dataSource">
+			<ref bean="LOGINDB" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.connection.autocommit">false</prop>
+				<prop key="hibernate.jdbc.use_get_generated_keys">true</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+	</bean>
+	<tx:annotation-driven transaction-manager="loginTransactionManager"
+		proxy-target-class="true" />
+	<bean id="loginTransactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="loginSessionFactory"></property>
+	</bean>
+
 </beans>
 	
