@@ -36,13 +36,11 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 	}
 
 	public void updatePerson(Person person) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeGenericDao.update(person);
 	}
 
 	public void deletePerson(Person person) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeGenericDao.delete(person);
 	}
 
 	public List<Person> getPersons(Person person) {
