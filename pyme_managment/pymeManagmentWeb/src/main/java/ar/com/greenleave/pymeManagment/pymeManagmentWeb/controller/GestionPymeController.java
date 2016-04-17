@@ -1,6 +1,6 @@
 package ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller;
 
-public interface GestionClienteController {
+public interface GestionPymeController {
 
 	//Clientes
 	public String getClients();

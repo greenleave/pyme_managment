@@ -6,7 +6,7 @@ public class UserCenterControllerImpl implements UserCenterController{
 
 	@Override
 	public String login(String json) {
-		
+		// TODO Auto-generated method stub
 		return null;
 	}
 

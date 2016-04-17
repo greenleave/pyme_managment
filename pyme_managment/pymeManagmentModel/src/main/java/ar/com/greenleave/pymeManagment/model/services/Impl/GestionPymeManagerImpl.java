@@ -2,10 +2,13 @@ package ar.com.greenleave.pymeManagment.model.services.Impl;
 
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeDao;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeGenericDao;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestiomEmpleados.Employee;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Client;
@@ -17,11 +20,16 @@ import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Vendor;
 import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
 
 @Transactional
-@Service("gestionPymeManager")
+@Repository("gestionPymeManager")
 public class GestionPymeManagerImpl implements GestionPymeManager{
+	
+	private static Log log = LogFactory.getLog(GestionPymeManagerImpl.class);
 	
 	@Autowired
 	private GestionPymeGenericDao gestionPymeGenericDao;
+	
+	@Autowired
+	private GestionPymeDao gestionPymeDao;
 
 	public void createPerson(Person person) {
 		gestionPymeGenericDao.save(person);		
@@ -58,7 +66,7 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 	}
 
 	public List<Country> getCountries(Country country) {
-		// TODO Auto-generated method stub
+		gestionPymeDao.getCountries(null);
 		return null;
 	}
 

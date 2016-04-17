@@ -15,11 +15,12 @@
     http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
 
-
-	<bean id="gestionClienteDao"
-		class="ar.com.greenleave.pymeManagment.model.gestionCliente.dao.impl.GestionClienteDaoImpl">
+<!--    
+	<bean id="gestionPymeDao"
+		class="ar.com.greenleave.pymeManagment.model.gestionPyme.dao.impl.GestionPymeDaoImpl">
 		<property name="dataSource" ref="PYMEDB" />
 	</bean>
+-->
 	
 	<!--  
 	<bean id="loginDao"

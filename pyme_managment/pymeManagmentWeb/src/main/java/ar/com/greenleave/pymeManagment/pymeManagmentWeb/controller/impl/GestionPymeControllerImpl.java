@@ -3,16 +3,16 @@ package ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
-import ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.GestionClienteController;
+import ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.GestionPymeController;
 
-public class GestionClienteControllerImpl implements GestionClienteController{
+public class GestionPymeControllerImpl implements GestionPymeController{
 
 	@Autowired
 	GestionPymeManager gestionPymeService;
-	
+
 	@Override
 	public String getClients() {
-		gestionPymeService.getClients();
+		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -159,5 +159,5 @@ public class GestionClienteControllerImpl implements GestionClienteController{
 		// TODO Auto-generated method stub
 		
 	}
-
+	
 }

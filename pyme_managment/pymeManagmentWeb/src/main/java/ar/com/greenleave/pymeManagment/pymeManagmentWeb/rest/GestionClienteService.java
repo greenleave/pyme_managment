@@ -10,14 +10,14 @@ import javax.ws.rs.core.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.GestionClienteController;
+import ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.GestionPymeController;
 
 @Component
 @Path("/gestionCliente")
 public class GestionClienteService {
 
 	@Autowired
-	private GestionClienteController gestionClienteController;
+	private GestionPymeController gestionClienteController;
 	
 	public static final String CHARSET_UTF8 = "; charset=utf-8";
 	

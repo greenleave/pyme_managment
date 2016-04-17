@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 public class HibernateDaoHelper {
 
 	@Autowired
-	@Qualifier("gestionClienteSessionFactory")
-	private SessionFactory gestionClienteSessionFactory;
+	@Qualifier("gestionPymeSessionFactory")
+	private SessionFactory gestionPymeSessionFactory;
 
 	public Session getSession() {
-		return this.gestionClienteSessionFactory.getCurrentSession();
+		return this.gestionPymeSessionFactory.getCurrentSession();
 	}
 
 	public void setSessionFactory(SessionFactory pymeManagmentSessionFactory) {
-		this.gestionClienteSessionFactory = pymeManagmentSessionFactory;
+		this.gestionPymeSessionFactory = pymeManagmentSessionFactory;
 	}
 }
