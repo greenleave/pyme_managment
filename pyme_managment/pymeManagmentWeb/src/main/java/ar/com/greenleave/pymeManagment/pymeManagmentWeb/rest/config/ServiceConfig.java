@@ -30,7 +30,7 @@ public class ServiceConfig extends ResourceConfig{
 		register(LoginService.class);
 		register(GestionClienteService.class);
 		//Agrego el paquete en el que esta la clase que registre anteriormente		
-		packages("ar.com.greenleave.pymeManagment.controller.rest.service","org.glassfish.jersey.examples.jackson");
+		packages("ar.com.greenleave.pymeManagment.pymeManagmentWeb.rest","org.glassfish.jersey.examples.jackson");
 		//Logging
 		registerInstances(new LoggingFilter(Logger.getLogger(ServiceConfig.class.getName()), true));
 		//Trace

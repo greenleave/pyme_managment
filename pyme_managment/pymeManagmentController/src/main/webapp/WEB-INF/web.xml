@@ -9,7 +9,7 @@
 	
 	<listener>
 		<listener-class>
-			org.springframework.web.context.ContextLoaderListener
+	org.springframework.web.context.ContextLoaderListener
 		</listener-class>
 	</listener>
 	<context-param>

@@ -24,7 +24,6 @@ public class LoginService {
 	@Path("login")
 	@Produces(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	@Consumes(MediaType.APPLICATION_JSON + CHARSET_UTF8)
-	
 	public Response loginUser(final String json){
 		String resultado = loginController.login(json); 
 		return Response.status(201).header("Access-Control-Allow-Origin", "*")

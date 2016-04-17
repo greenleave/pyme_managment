@@ -17,16 +17,16 @@ public interface GestionPymeManager {
 	List<Person> getPersons(Person person);
 	
 	
-	void saveCountry(Country country);
+	void createCountry(Country country);
 	void updateCountry(Country country);
 	void deleteCountry(Country country);
 	List<Country> getCountries(Country country);
 	
-	void saveTypePhone(TypeOfPhone typePhone);
+	void createTypePhone(TypeOfPhone typePhone);
 	void updateTypePhone(TypeOfPhone typePhone);
 	void deleteTypePhone(TypeOfPhone typePhone);
 	
-	void saveTypeAdress(TypeOfAdress typeAdress);
+	void createTypeAdress(TypeOfAdress typeAdress);
 	void updateTypeAdress(TypeOfAdress typeAdress);
 	void deleteTypeAdress(TypeOfAdress typeAdress);
 	
@@ -38,18 +38,20 @@ public interface GestionPymeManager {
 	
 	
 	
+	
+	
 //	void deleteTypeDocumentById(Long l);
 //	List<Country> getAllCountries();
 //	Country getCountryById(Long id);
 //	TypeOfDocument getTypeDocumentById(Long id);
 //	
 //	
-//	void saveCountry(Country country);
-//	void savePerson(Person person);
-//	void savePhone(Phone phone);
-//	void saveTypeAdress(TypeOfAdress adress);
-//	void saveTypeDocument(TypeOfDocument document);
-//	void saveTypePhone(TypeOfPhone typePhone);
+//	void createCountry(Country country);
+//	void createPerson(Person person);
+//	void createPhone(Phone phone);
+//	void createTypeAdress(TypeOfAdress adress);
+//	void createTypeDocument(TypeOfDocument document);
+//	void createTypePhone(TypeOfPhone typePhone);
 //	
 //	void updateCountry(Country country);
 //	void updateTypeOfDocument(TypeOfDocument typeDocument);

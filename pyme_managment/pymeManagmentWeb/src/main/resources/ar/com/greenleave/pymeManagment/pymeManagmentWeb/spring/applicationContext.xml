@@ -15,11 +15,11 @@
     http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 	<import
 		resource="classpath:/ar/com/greenleave/pymeManagment/gestionCliente/model/spring/ApplicationContext.xml" />
-	<bean id="GestionClienteController"
-		class="ar.com.greenleave.pymeManagment.controller.impl.GestionClienteControllerImpl">
+	<bean id="GestionPymeController"
+		class="ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.impl.GestionPymeControllerImpl">
 	</bean>
 	<bean id="LoginController"
-		class="ar.com.greenleave.pymeManagment.controller.impl.LoginControllerImpl">
+		class="ar.com.greenleave.pymeManagment.pymeManagmentWeb.controller.impl.UserCenterControllerImpl">
 	</bean>
 	<!-- <bean id="mapperDozer" class="ar.com.nextel.nexus.stsuc.server.utils.MapperExtended"> 
 		<property name="mappingFiles"> <list> <value>ar/com/nextel/nexus/view/Mapping-Dozer.xml</value> 
