@@ -1,157 +1,129 @@
 package ar.com.greenleave.pyme_managment.pymeManagmentWeb.controller.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.google.gson.Gson;
+
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfAdress;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDocument;
+import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
 import ar.com.greenleave.pyme_managment.pymeManagmentWeb.controller.GestionPymeController;
 
 public class GestionPymeControllerImpl implements GestionPymeController {
-
-	@Override
-	public String getClients() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void getClient(String json) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void createClient(String json) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void updateCliente(String json) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteCliente(String json) {
-		// TODO Auto-generated method stub
-		
-	}
-
+	@Autowired
+	GestionPymeManager gestionPymeManager;
+	private static Gson gson = new Gson();
+	
 	@Override
 	public String getPersonas() {
-		// TODO Auto-generated method stub
-		return null;
+		return	gson.toJson(gestionPymeManager.getPersons(null));
+	
 	}
 
 	@Override
 	public String getPersona(String json) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return gson.toJson(gestionPymeManager.getPersons(gson.fromJson(json, Person.class)));
 	}
 
 	@Override
 	public void crearPersona(String json) {
-		// TODO Auto-generated method stub
+		gestionPymeManager.createPerson(gson.fromJson(json, Person.class));
 		
 	}
 
 	@Override
 	public void modificarPersona(String json) {
-		// TODO Auto-generated method stub
+		gestionPymeManager.updatePerson(gson.fromJson(json, Person.class));
 		
 	}
 
 	@Override
 	public void eliminarPersona(String json) {
-		// TODO Auto-generated method stub
+		gestionPymeManager.deletePerson(gson.fromJson(json, Person.class));
 		
 	}
 
 	@Override
 	public String getCountries() {
-		// TODO Auto-generated method stub
-		return null;
+		return gson.toJson(gestionPymeManager.getCountries());
 	}
 
-	@Override
-	public String getContry(String json) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public String getContry(String json) {
+//		return null;
+//	}
 
 	@Override
 	public void createCountry(String json) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeManager.createCountry(gson.fromJson(json, Country.class));
 	}
 
 	@Override
 	public void updateCountry(String json) {
-		// TODO Auto-generated method stub
+		gestionPymeManager.updateCountry(gson.fromJson(json, Country.class));
 		
 	}
 
 	@Override
 	public void deleteCountry(String json) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeManager.deleteCountry(gson.fromJson(json, Country.class));
 	}
 
 	@Override
 	public String getTypesAdress() {
-		// TODO Auto-generated method stub
-		return null;
+		return gson.toJson(gestionPymeManager.getTypesAdress());
 	}
 
-	@Override
-	public String getTypeAdress() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+//	@Override
+//	public String getTypeAdress() {
+//		return null;
+//	}
 
 	@Override
 	public void createTypeAdress(String json) {
-		// TODO Auto-generated method stub
+		gestionPymeManager.createTypeAdress(gson.fromJson(json, TypeOfAdress.class));
 		
 	}
 
 	@Override
 	public void updateTypeAdress(String json) {
-		// TODO Auto-generated method stub
+		gestionPymeManager.updateTypeAdress(gson.fromJson(json, TypeOfAdress.class));
 		
 	}
 
 	@Override
 	public void deleteTypeAdress(String json) {
-		// TODO Auto-generated method stub
+		gestionPymeManager.deleteTypeAdress(gson.fromJson(json, TypeOfAdress.class));
 		
 	}
 
 	@Override
 	public String getTypesDocument() {
-		// TODO Auto-generated method stub
-		return null;
+		return gson.toJson(gestionPymeManager.getTypesOfDocuments());
 	}
-
-	@Override
-	public String getTypeDocument(String json) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public void createTypeDocument(String json) {
-		// TODO Auto-generated method stub
+		gestionPymeManager.createTypeDocument(gson.fromJson(json, TypeOfDocument.class));
 		
 	}
 
 	@Override
 	public void updateTypeDocument(String json) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeManager.updateTypeDocument(gson.fromJson(json, TypeOfDocument.class));
 	}
 
 	@Override
 	public void deleteTypeDocument(String json) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeManager.deleteTypeDocument(gson.fromJson(json, TypeOfDocument.class));	
+	}
+
+	@Override
+	public String save() {
+		return "Funciona pedazo da garca";
 	}
 	
 }

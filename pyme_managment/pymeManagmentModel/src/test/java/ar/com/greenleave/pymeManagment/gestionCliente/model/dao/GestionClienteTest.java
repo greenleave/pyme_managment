@@ -1,11 +1,7 @@
 package ar.com.greenleave.pymeManagment.gestionCliente.model.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.sql.DataSource;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,14 +13,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
-import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Adress;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
-import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
-import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Phone;
-import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfAdress;
-import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDocument;
-import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPerson;
-import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPhone;
 import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -75,12 +64,12 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 		gestionPymeManager.createCountry(c);
 	}
 	
-	@Test
-	public void testGetAllCountries() {
-		Country c = new Country();
-		c.setCountryCode("ARG");
-		Assert.assertEquals("Argentina", gestionPymeManager.getCountries(c).get(0).getCountry());
-	}
+//	@Test
+//	public void testGetAllCountries() {
+//		Country c = new Country();
+//		c.setCountryCode("ARG");
+//		Assert.assertEquals("Argentina", gestionPymeManager.getCountries(c).get(0).getCountry());
+//	}
 
 //	@Test
 //	@Rollback(false)

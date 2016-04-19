@@ -15,6 +15,7 @@ import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Client;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfAdress;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDocument;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPhone;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Vendor;
 import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
@@ -61,10 +62,10 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 		gestionPymeGenericDao.delete(country);
 		
 	}
-
-	public List<Country> getCountries(Country country) {
+	
+	public List<Country> getCountries() {
 		
-		return gestionPymeDao.getCountries(country);
+		return gestionPymeGenericDao.findAll(Country.class);
 	}
 
 	public void createTypePhone(TypeOfPhone typePhone) {
@@ -103,6 +104,32 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 
 	public void createEmployee(Employee employee) {
 		gestionPymeGenericDao.save(employee);
+	}
+
+	public List<TypeOfDocument> getTypesOfDocuments() {
+		return gestionPymeGenericDao.findAll(TypeOfDocument.class);
+	}
+
+	public List<TypeOfPhone> getTypesOfPhone() {
+		return gestionPymeGenericDao.findAll(TypeOfPhone.class);
+	}
+
+	public void createTypeDocument(TypeOfDocument typeDocument) {
+		gestionPymeGenericDao.save(typeDocument);
+		
+	}
+
+	public void updateTypeDocument(TypeOfDocument typeDocument) {
+		gestionPymeGenericDao.update(typeDocument);
+		
+	}
+
+	public void deleteTypeDocument(TypeOfDocument typeDocument) {
+		gestionPymeGenericDao.delete(typeDocument);
+	}
+
+	public List<TypeOfAdress> getTypesAdress() {
+		return gestionPymeGenericDao.findAll(TypeOfAdress.class);
 	}
 	
 }

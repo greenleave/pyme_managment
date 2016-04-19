@@ -11,7 +11,6 @@
 		<context:component-scan base-package="ar.com.greenleave.pyme_managment.pymeManagmentWeb.rest.service" />
 		
 		<!-- Bean del servicio para poder pegarle a la base de datos-->
-        <bean id="gestionPymeController" class="ar.com.greenleave.pyme_managment.pymeManagmentWeb.controller.impl.GestionPymeControllerImpl" />
-        <bean id="loginController" class="ar.com.greenleave.pyme_managment.pymeManagmentWeb.controller.impl.GestionPymeControllerImpl" />  
-		<import	resource="classpath:/ar/com/greenleave/pymeManagment/gestionCliente/model/spring/ApplicationContext.xml" />
+        <bean id="gestionPymeService" class="ar.com.greenleave.pyme_managment.pymeManagmentWeb.service.impl.GestionPymeServiceImplDB" />  
+		<!--   <import	resource="classpath:/ar/com/greenleave/pymeManagment/gestionCliente/model/spring/ApplicationContext.xml" />-->
 </beans>
