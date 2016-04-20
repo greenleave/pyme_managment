@@ -27,8 +27,7 @@ public class GestionPymeRestService {
 	@Consumes(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	public Response savePayment() {
 
-		String result = gestionPymeController.save();
-
+		String result = gestionPymeController.getCountries();
 		return Response.status(200).entity(result).build();
 
 	}

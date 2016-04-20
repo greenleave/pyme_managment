@@ -38,6 +38,8 @@
 		<property name="sessionFactory" ref="gestionPymeSessionFactory"></property>
 	</bean>
 
+	
+	
 	<bean id="loginSessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="packagesToScan"

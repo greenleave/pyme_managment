@@ -5,7 +5,7 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeDao;
@@ -19,17 +19,16 @@ import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDo
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPhone;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Vendor;
 import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
-
 @Transactional
-@Repository("gestionPymeManager")
+@Service("gestionPymeManager")
 public class GestionPymeManagerImpl implements GestionPymeManager{
 	
 	private static Log log = LogFactory.getLog(GestionPymeManagerImpl.class);
 	
-	@Autowired
+	@Autowired(required=true)
 	private GestionPymeGenericDao gestionPymeGenericDao;
 	
-	@Autowired
+	@Autowired(required=true)
 	private GestionPymeDao gestionPymeDao;
 
 	public void createPerson(Person person) {
@@ -64,7 +63,6 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 	}
 	
 	public List<Country> getCountries() {
-		
 		return gestionPymeGenericDao.findAll(Country.class);
 	}
 

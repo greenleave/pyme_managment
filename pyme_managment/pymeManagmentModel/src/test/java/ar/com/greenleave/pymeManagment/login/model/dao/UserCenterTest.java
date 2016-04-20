@@ -14,6 +14,7 @@ import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
+import ar.com.greenleave.pymeManagment.model.login.User;
 import ar.com.greenleave.pymeManagment.model.service.LoginClienteManager;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -36,4 +37,17 @@ public class UserCenterTest extends AbstractTransactionalJUnit4SpringContextTest
 		Assert.notNull( loginClienteManager.login("as", "12345678a") );
 	}
 	
+	
+	@Test
+	@Rollback(false)
+	public void createUser(){
+		User user = new User();
+		user.setEmail("tuvieja@tuvieja.com");
+		user.setIsLocked(false);
+		user.setName("Ernesto Albarez");
+		user.setPassword("12345678a");
+		user.setPhone("1122334455");
+		user.setUserName("ealbarez");
+		loginClienteManager.userRegistration(user);
+	}
 }

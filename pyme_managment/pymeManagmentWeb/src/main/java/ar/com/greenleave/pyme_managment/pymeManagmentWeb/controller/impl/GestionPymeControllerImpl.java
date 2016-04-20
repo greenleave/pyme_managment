@@ -1,6 +1,8 @@
 package ar.com.greenleave.pyme_managment.pymeManagmentWeb.controller.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 
@@ -11,6 +13,8 @@ import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDo
 import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
 import ar.com.greenleave.pyme_managment.pymeManagmentWeb.controller.GestionPymeController;
 
+@Service("gestionPymeController")
+//@Controller
 public class GestionPymeControllerImpl implements GestionPymeController {
 	@Autowired
 	GestionPymeManager gestionPymeManager;
