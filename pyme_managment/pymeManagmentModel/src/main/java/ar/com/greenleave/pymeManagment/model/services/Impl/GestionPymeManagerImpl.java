@@ -36,86 +36,73 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 	}
 
 	public void updatePerson(Person person) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeGenericDao.update(person);
 	}
 
 	public void deletePerson(Person person) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeGenericDao.delete(person);
 	}
 
 	public List<Person> getPersons(Person person) {
-		// TODO Auto-generated method stub
-		return null;
+		return gestionPymeDao.getPersons(person);
 	}
 
-	public void saveCountry(Country country) {
-		// TODO Auto-generated method stub
+	public void createCountry(Country country) {
+		gestionPymeGenericDao.save(country);
 		
 	}
 
 	public void updateCountry(Country country) {
-		// TODO Auto-generated method stub
+		gestionPymeGenericDao.update(country);
 		
 	}
 
 	public void deleteCountry(Country country) {
-		// TODO Auto-generated method stub
+		gestionPymeGenericDao.delete(country);
 		
 	}
 
 	public List<Country> getCountries(Country country) {
-		gestionPymeDao.getCountries(null);
-		return null;
+		
+		return gestionPymeDao.getCountries(country);
 	}
 
-	public void saveTypePhone(TypeOfPhone typePhone) {
-		// TODO Auto-generated method stub
-		
+	public void createTypePhone(TypeOfPhone typePhone) {
+		gestionPymeGenericDao.save(typePhone);
 	}
 
 	public void updateTypePhone(TypeOfPhone typePhone) {
-		// TODO Auto-generated method stub
+		gestionPymeGenericDao.update(typePhone);
 		
 	}
 
 	public void deleteTypePhone(TypeOfPhone typePhone) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeGenericDao.delete(typePhone);
 	}
 
-	public void saveTypeAdress(TypeOfAdress typeAdress) {
-		// TODO Auto-generated method stub
-		
+	public void createTypeAdress(TypeOfAdress typeAdress) {
+		gestionPymeGenericDao.save(typeAdress);
 	}
 
 	public void updateTypeAdress(TypeOfAdress typeAdress) {
-		// TODO Auto-generated method stub
+		gestionPymeGenericDao.update(typeAdress);
 		
 	}
 
 	public void deleteTypeAdress(TypeOfAdress typeAdress) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeGenericDao.delete(typeAdress);
 	}
 
 	public void createClient(Client client) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeGenericDao.save(client);
 	}
 
 	public void createVendor(Vendor vendor) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeGenericDao.save(vendor);
 	}
 
 	public void createEmployee(Employee employee) {
-		// TODO Auto-generated method stub
-		
+		gestionPymeGenericDao.save(employee);
 	}
-	
-	
-
 	
 }

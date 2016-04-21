@@ -33,7 +33,7 @@ public class UserCenterTest extends AbstractTransactionalJUnit4SpringContextTest
 	@Test
 	@Rollback(false)
 	public void login(){
-		Assert.notNull( loginClienteManager.login("seeb", "seeb143") );
+		Assert.notNull( loginClienteManager.login("as", "12345678a") );
 	}
 	
 }

@@ -33,9 +33,8 @@ public class LoginDaoImpl extends LoginHibernateDaoHelper implements LoginDao {
 			 getSession().update(user);
 			 return user;
 		}
-		return null;
 		
-		
+		return null;		
 	}
 	
 	
