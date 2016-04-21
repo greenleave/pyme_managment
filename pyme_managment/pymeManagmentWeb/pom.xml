@@ -21,12 +21,19 @@
 			<url>http://download.java.net/maven/2/</url>
 		</repository>
 	</repositories>
-	
+
 	<properties>
-	<spring.version>3.2.14.RELEASE</spring.version>
+		<spring.version>3.2.14.RELEASE</spring.version>
 	</properties>
 
 	<dependencies>
+
+		<!-- AOP dependency -->
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2</version>
+		</dependency>
 		<!-- Jersey -->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
@@ -81,7 +88,7 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.google.code.gson</groupId>
 			<artifactId>gson</artifactId>
@@ -94,7 +101,7 @@
 			<artifactId>pymeManagmentModel</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
 
 	</dependencies>
 	<build>
