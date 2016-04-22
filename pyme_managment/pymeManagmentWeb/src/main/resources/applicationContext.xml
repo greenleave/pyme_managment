@@ -17,6 +17,7 @@
  
     
     	<import	resource="classpath:/ar/com/greenleave/pymeManagment/gestionCliente/model/spring/ApplicationContext.xml" />
+    	<tx:annotation-driven />
 		
     	<!-- Scan de las clases que utilizan algo de spring -->
 		<context:component-scan base-package="ar.com.greenleave.pyme_managment.pymeManagmentWeb" />
