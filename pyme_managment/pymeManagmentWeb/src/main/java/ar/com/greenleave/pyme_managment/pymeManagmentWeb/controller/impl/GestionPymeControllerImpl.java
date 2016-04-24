@@ -1,7 +1,6 @@
 package ar.com.greenleave.pyme_managment.pymeManagmentWeb.controller.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;

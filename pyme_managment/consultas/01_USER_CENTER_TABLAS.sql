@@ -1,4 +1,4 @@
-  create schema user_center_pyme_managment;
+/*  create schema user_center_pyme_managment;
   commit;
   use user_center_pyme_managment;
 
@@ -51,4 +51,4 @@ constraint pk_id_user_perfil primary key (id),
 constraint fk_id_user_perfil foreign key(id_user) references PM_USER(ID),
 constraint fk_id_prefil_user foreign key(id_perfil) references PM_PERFIL(ID)
 );
-commit;
+commit;*/

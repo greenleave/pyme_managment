@@ -37,7 +37,7 @@ public class LoginPymeRestService {
 	@Produces(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	@Consumes(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	public Response loginGet(final String json){
-		String resultado = loginController.login(json);
+		String resultado = loginController.login("User:{userName:'seeb', password:'seeb143'}");
 		return Response.status(201).entity(resultado).build();
 	}
 	

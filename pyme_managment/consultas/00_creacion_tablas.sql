@@ -1,13 +1,14 @@
+/*
   create schema pyme_managment;
   commit;
   use pyme_managment;
   
-/*  
+  
 CREATE TABLE  PM_TYPE_PERSON(
 	ID INT AUTO_INCREMENT,
     DESCRIPTION VARCHAR(20),
     constraint pk_id_type_client primary key(ID)
-);*/
+);
 
 create table PM_COUNTRY(
 ID INT AUTO_INCREMENT,
@@ -143,6 +144,17 @@ create table PM_VENDOR(
 ); 
 
 commit;
-/*
+
 	alter table pm
 */
+
+create table PM_EMPLOYEE(
+	ID INT auto_increment,
+    LEGAJO varchar(50),
+	ID_PERSON INT,
+	SUELDO_BASICO DOUBLE,
+    FECHA_INGRESO date,
+    constraint pk_id_employee PRIMARY KEY(ID),
+    constraint fk_person_employee foreign key (ID_PERSON) references PM_PERSON(ID)
+);
+commit;
