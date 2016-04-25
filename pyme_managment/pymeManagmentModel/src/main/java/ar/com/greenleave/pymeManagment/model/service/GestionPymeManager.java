@@ -19,6 +19,7 @@ public interface GestionPymeManager {
 	
 	
 	List<Country> getCountries();
+	Country getCountryById(Long id);
 	void createCountry(Country country);
 	void updateCountry(Country country);
 	void deleteCountry(Country country);

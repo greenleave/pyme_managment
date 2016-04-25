@@ -42,7 +42,6 @@ public class TestUserCenterView {
 	@Rollback(false)
 	public void testCreateUser(){
 		String json = "{\"name\":\"Sebastian Emanuel Enrique Bogado\", \"phone\":\"1162961073\", \"email\":\"seebogado@gmail.com\" ,\"userName\":\"seeb\", \"password\":\"seeb143\"}";
-//		String json = "User:{name:'Sebastian Emanuel Enrique Bogado', phone:'1162961073', email:'seebogado@gmail.com' ,userName:'seeb', password:'seeb143'}";
 		loginController.createUser(json);
 	}
 	

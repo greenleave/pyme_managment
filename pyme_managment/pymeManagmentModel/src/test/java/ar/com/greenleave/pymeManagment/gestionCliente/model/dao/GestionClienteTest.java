@@ -1,5 +1,8 @@
 package ar.com.greenleave.pymeManagment.gestionCliente.model.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.junit.Test;
@@ -13,7 +16,12 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Adress;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfAdress;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDocument;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPerson;
 import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -62,6 +70,41 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 		c.setCountry("Argentina");
 		c.setCountryCode("ARG");
 		gestionPymeManager.createCountry(c);
+	}
+	
+	@Test
+	@Rollback(false)
+	public void testCreatePerson(){
+		Country country = gestionPymeManager.getCountryById(1L);
+		
+		TypeOfDocument typeOfDocument = new TypeOfDocument();
+		typeOfDocument.setCountry(country);
+		typeOfDocument.setTypeDocument("D.N.I");
+		
+		
+		
+		TypeOfAdress typeOfAdress = new TypeOfAdress();
+		typeOfAdress.setTypeAdress("DOMICILIO");
+		
+		Adress adress = new Adress();
+		adress.setApartment("4 D");
+		adress.setCountry(country);
+		adress.setPostCode("1708");
+		adress.setStreet("Leandro N. Alem");
+		adress.setTypeAdress(typeOfAdress);
+		adress.setNumber(827L);
+		List<Adress> direcciones = new ArrayList<Adress>();
+		direcciones.add(adress);
+		
+		Person person= new Person();
+		person.setTypeOfDocument(typeOfDocument);
+		person.setAdress(direcciones);
+		person.setDocument("38256096");
+		person.setName("Sebastian Emanuel Enrique Bogado");
+		person.setTypeOfPerson(TypeOfPerson.HOMBRE);
+		
+		gestionPymeManager.createPerson(person);
+		
 	}
 	
 //	@Test

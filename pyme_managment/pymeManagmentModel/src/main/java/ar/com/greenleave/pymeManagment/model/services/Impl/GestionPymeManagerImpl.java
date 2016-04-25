@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeDao;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeGenericDao;
-import ar.com.greenleave.pymeManagment.model.gestionPyme.gestiomEmpleados.Employee;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Client;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
@@ -100,9 +99,9 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 		gestionPymeGenericDao.save(vendor);
 	}
 
-	public void createEmployee(Employee employee) {
-		gestionPymeGenericDao.save(employee);
-	}
+//	public void createEmployee(Employee employee) {
+//		gestionPymeGenericDao.save(employee);
+//	}
 
 	public List<TypeOfDocument> getTypesOfDocuments() {
 		return gestionPymeGenericDao.findAll(TypeOfDocument.class);
@@ -128,6 +127,10 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 
 	public List<TypeOfAdress> getTypesAdress() {
 		return gestionPymeGenericDao.findAll(TypeOfAdress.class);
+	}
+
+	public Country getCountryById(Long id) {
+		return gestionPymeGenericDao.get(Country.class, id);
 	}
 	
 }
