@@ -10,6 +10,8 @@ import org.springframework.stereotype.Repository;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeDao;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.Employee;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.TypeOfEmployee;
 
 @Repository(value = "gestionPymeDao")
 public class GestionPymeDaoImpl extends HibernateDaoHelper implements GestionPymeDao {
@@ -48,6 +50,35 @@ public class GestionPymeDaoImpl extends HibernateDaoHelper implements GestionPym
 //			if(person.getAdress()!=null) // aca era la magia en la que tenia que crear un nuevo alias para que no me rompa demasiado las pelotas a la hora de filtrar.
 		}
 		return c.list();
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Employee> getEmployeesByTypeEmployee(String typeEmployee) {
+		Criteria criteria= getSession().createCriteria(Employee.class, "e");
+		if(typeEmployee!=null){
+			criteria.createAlias("e.typeOfEmplyee","te");
+			criteria.add(Restrictions.eq("te.nombre", typeEmployee));
+		}
+		return criteria.list() ;
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public List<Employee> getEmployeesByTypeEmployeeId(Long id){
+		
+		Criteria criteria = getSession().createCriteria(Employee.class, "e");
+		if(id!=null){
+			criteria.createAlias("e.typeOfEmplyee","te");
+			criteria.add(Restrictions.eq("te.id", id));
+		}
+		return criteria.list();
+	}
+
+	public List<TypeOfEmployee> getTypeEmployeesByLikeName(String name) {
+		Criteria criteria = getSession().createCriteria(TypeOfEmployee.class, "te");
+		
+		criteria.add(Restrictions.eq("nombre", name));
+		return ;
 	}
 	
 }

@@ -7,43 +7,59 @@ import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfAdress;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDocument;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPhone;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.Employee;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.TypeOfEmployee;
 
 public interface GestionPymeManager {
 	
-	
+	Person getPersonById(Long id);
 	List<Person> getPersons(Person person);
 	void createPerson(Person person);
 	void updatePerson(Person person);
 	void deletePerson(Person person);
 	
 	
-	
-	List<Country> getCountries();
 	Country getCountryById(Long id);
+	List<Country> getCountries();
 	void createCountry(Country country);
 	void updateCountry(Country country);
 	void deleteCountry(Country country);
 	
 	
-	
+	TypeOfPhone getTypeOfPhoneById(Long id);
 	List<TypeOfPhone> getTypesOfPhone();
 	void createTypePhone(TypeOfPhone typePhone);
 	void updateTypePhone(TypeOfPhone typePhone);
 	void deleteTypePhone(TypeOfPhone typePhone);
 	
-	
+	TypeOfDocument getTypeOfDocumentById(Long id);
 	List<TypeOfDocument> getTypesOfDocuments();
 	void createTypeDocument(TypeOfDocument typeDocument);
 	void updateTypeDocument(TypeOfDocument typeDocument);
 	void deleteTypeDocument(TypeOfDocument typeDocument);
 	
 	
+	TypeOfAdress getTypeOfAdressById(Long id);
 	List<TypeOfAdress> getTypesAdress();
 	void createTypeAdress(TypeOfAdress typeAdress);
 	void updateTypeAdress(TypeOfAdress typeAdress);
 	void deleteTypeAdress(TypeOfAdress typeAdress);
 	
+	List<Employee> getEmployeesByTypeEmployeeId(Long id);
+	List<Employee> getEmployeesByTypeEmployee(String typeEmployee);
+	Employee getEmployee(Long id);
+	void createEmployee(Employee employee);
+	void updateEmployee(Employee employee);
+	void deleteEmployee(Employee employee);
 	
+	
+	
+	TypeOfEmployee getTypeOfEmployeeById(Long id);
+	List<TypeOfEmployee> getTypeEmployeesByLikeName(String name);
+	List<TypeOfEmployee> getTypesOfEmployees();
+	void createTypeEmployee(TypeOfEmployee typeOfEmployee);
+	void updateTypeEmployee(TypeOfEmployee typeOfEmployee);
+	void deleteTypeEmployee(TypeOfEmployee typeOfEmployee);
 	
 	
 
@@ -55,12 +71,7 @@ public interface GestionPymeManager {
  * 	
  */
 	
-//	List<Employee> getEmployees();
-//	List<Employee> getEmployeesByArea(Area area);
-//	Employee getEmployee(Employee employee);
-//	void createEmployee(Employee employee);
-//	void updateEmployee(Employee employee);
-//	void deleteEmployee(Employee employee);
+
 	
 	
 	

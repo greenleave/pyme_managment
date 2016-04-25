@@ -148,11 +148,28 @@ commit;
 	alter table pm
 */
 
+create table PM_TYPE_EMPLOYEE(
+ID int auto_increment,
+NAME varchar(50),
+DESCRIPTION varchar(200),
+BASIC_SALARY DOUBLE,
+constraint pk_id_type_employee PRIMARY KEY (ID)
+);
+commit;
+
+create table PM_HORARIO_LABORAL(
+ID int auto_increment,
+DESCRIPCION varchar(50),
+HORA_INGRESO time,
+HORA_SALIDA time,
+constraint pk_id_horario_laboral PRIMARY key (ID)
+);
+commit;
+
 create table PM_EMPLOYEE(
 	ID INT auto_increment,
     LEGAJO varchar(50),
 	ID_PERSON INT,
-	SUELDO_BASICO DOUBLE,
     FECHA_INGRESO date,
     constraint pk_id_employee PRIMARY KEY(ID),
     constraint fk_person_employee foreign key (ID_PERSON) references PM_PERSON(ID)
