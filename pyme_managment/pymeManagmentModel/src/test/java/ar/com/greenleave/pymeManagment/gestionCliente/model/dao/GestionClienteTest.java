@@ -1,6 +1,8 @@
 package ar.com.greenleave.pymeManagment.gestionCliente.model.dao;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -24,6 +26,8 @@ import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfAd
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDocument;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPerson;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPhone;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.Employee;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.HorarioLaboral;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.TypeOfEmployee;
 import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
 
@@ -69,6 +73,25 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 	
 	@Test
 	@Rollback(false)
+	public void testCreateHorarioLaboral(){
+		HorarioLaboral horarioLaboral = new HorarioLaboral();
+		Calendar cal = Calendar.getInstance();
+		cal.set(Calendar.HOUR_OF_DAY, 9);
+		cal.set(Calendar.MINUTE, 0);
+		cal.set(Calendar.SECOND, 0);
+		horarioLaboral.setHorarioEntrada(cal.getTime());
+		
+		Calendar cal2 = Calendar.getInstance();
+		cal2.set(Calendar.HOUR_OF_DAY, 18);
+		cal2.set(Calendar.MINUTE, 0);
+		cal2.set(Calendar.SECOND, 0);
+		horarioLaboral.setHorarioEntrada(cal2.getTime());
+		gestionPymeManager.createHorarioLaboral(horarioLaboral);
+	}
+	
+	
+	@Test
+	@Rollback(false)
 	public void testCreateTypeEmployee(){
 		TypeOfEmployee typeOfEmployee = new TypeOfEmployee();
 		typeOfEmployee.setDescripcionDelRol("Es un vendedor que vende productos");
@@ -81,7 +104,15 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 	@Test
 	@Rollback(false)
 	public void testCreateEmployee(){
-		Person person = gestionPymeManager.getPersonById(1L);
+		Employee empleado = new Employee();
+		Person person = gestionPymeManager.getPersonById(2L);
+		empleado.setPerson(person);
+		empleado.setHorarioLaboral(gestionPymeManager.getHorarioLaboralById(1L));
+		empleado.setLegajo("0000000001");
+		empleado.setFechaIngreso(new Date());
+		empleado.setTypeOfEmplyee(gestionPymeManager.getTypeOfEmployeeById(1L));
+		gestionPymeManager.createEmployee(empleado);
+		
 	}
 	
 	@Test

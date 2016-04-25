@@ -1,5 +1,7 @@
 package ar.com.greenleave.pymeManagment.model.gestionPyme.dao.impl;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -11,6 +13,7 @@ import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeDao;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.Employee;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.HorarioLaboral;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.TypeOfEmployee;
 
 @Repository(value = "gestionPymeDao")
@@ -74,11 +77,32 @@ public class GestionPymeDaoImpl extends HibernateDaoHelper implements GestionPym
 		return criteria.list();
 	}
 
+	@SuppressWarnings("unchecked")
 	public List<TypeOfEmployee> getTypeEmployeesByLikeName(String name) {
 		Criteria criteria = getSession().createCriteria(TypeOfEmployee.class, "te");
+		if(name!=null){
+			criteria.add(Restrictions.eq("nombre", name));
+			return criteria.list();
+		}else{
+			return new ArrayList<TypeOfEmployee>();
+		}
 		
-		criteria.add(Restrictions.eq("nombre", name));
-		return ;
+	}
+
+	public List<HorarioLaboral> getHorariosLaboralesByHorario(Date dateIn, Date dateOut) {
+		if(dateIn ==null && dateOut == null ){
+			return new ArrayList<HorarioLaboral>();
+		}
+		else{
+			Criteria criteria = getSession().createCriteria(HorarioLaboral.class, "hl");
+			if(dateIn!=null){
+				criteria.add(Restrictions.eq("horarioEntrada", dateIn));
+			}
+			if(dateOut != null){
+				criteria.add(Restrictions.eq("horarioSalida", dateOut));
+			}
+				return criteria.list();
+		}
 	}
 	
 }

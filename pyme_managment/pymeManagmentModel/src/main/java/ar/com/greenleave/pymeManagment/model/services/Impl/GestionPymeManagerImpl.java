@@ -1,5 +1,6 @@
 package ar.com.greenleave.pymeManagment.model.services.Impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -18,6 +19,7 @@ import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDo
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPhone;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Vendor;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.Employee;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.HorarioLaboral;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.TypeOfEmployee;
 import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
 @Transactional
@@ -203,6 +205,38 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 
 	public List<TypeOfEmployee> getTypesOfEmployees() {
 		return gestionPymeGenericDao.findAll(TypeOfEmployee.class);
+	}
+
+	public HorarioLaboral getHorarioLaboralById(Long id) {
+		return gestionPymeGenericDao.get(HorarioLaboral.class, id);
+	}
+
+	public List<HorarioLaboral> getHorariosLaboralesByHorarioSalida(Date date) {
+		return gestionPymeDao.getHorariosLaboralesByHorario(null,date);
+	}
+
+	public List<HorarioLaboral> getHorariosLaboralesByHorarioEntrada(Date date) {
+		return gestionPymeDao.getHorariosLaboralesByHorario(date,null);
+	}
+
+	public List<HorarioLaboral> getHorariosLaborales() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void createHorarioLaboral(HorarioLaboral horarioLaboral) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateHorarioLabora(HorarioLaboral horarioLaboral) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteHorarioLaboral(HorarioLaboral horarioLaboral) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

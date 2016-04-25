@@ -1,5 +1,6 @@
 package ar.com.greenleave.pymeManagment.model.service;
 
+import java.util.Date;
 import java.util.List;
 
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
@@ -8,6 +9,7 @@ import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfAd
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDocument;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPhone;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.Employee;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.HorarioLaboral;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.TypeOfEmployee;
 
 public interface GestionPymeManager {
@@ -62,7 +64,14 @@ public interface GestionPymeManager {
 	void deleteTypeEmployee(TypeOfEmployee typeOfEmployee);
 	
 	
-
+	HorarioLaboral getHorarioLaboralById(Long id);
+	List<HorarioLaboral> getHorariosLaboralesByHorarioSalida(Date date);
+	List<HorarioLaboral> getHorariosLaboralesByHorarioEntrada(Date date);
+	List<HorarioLaboral> getHorariosLaborales();
+	void createHorarioLaboral(HorarioLaboral horarioLaboral);
+	void updateHorarioLabora(HorarioLaboral horarioLaboral);
+	void deleteHorarioLaboral(HorarioLaboral horarioLaboral);
+	
 /**
  * 
  * 
@@ -70,10 +79,6 @@ public interface GestionPymeManager {
  * 
  * 	
  */
-	
-
-	
-	
 	
 //	Client getClient(Client client);
 //	List<Client> getClients();

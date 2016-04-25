@@ -1,10 +1,12 @@
 package ar.com.greenleave.pymeManagment.model.gestionPyme.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.Employee;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.HorarioLaboral;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.TypeOfEmployee;
 
 public interface GestionPymeDao {
@@ -18,4 +20,6 @@ public interface GestionPymeDao {
 	List<Employee> getEmployeesByTypeEmployeeId(Long id);
 
 	List<TypeOfEmployee> getTypeEmployeesByLikeName(String name);
+
+	List<HorarioLaboral> getHorariosLaboralesByHorario(Date dateIn, Date dateOut);
 }
