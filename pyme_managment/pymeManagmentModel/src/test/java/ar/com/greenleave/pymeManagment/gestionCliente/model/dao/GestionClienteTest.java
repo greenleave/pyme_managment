@@ -46,6 +46,13 @@ public class GestionClienteTest extends AbstractTransactionalJUnit4SpringContext
 	public void setDataSource(@Qualifier("PYMEDB") DataSource dataSource) {
 		super.setDataSource(dataSource);
 	}
+	
+	@Test
+	public void getPerson(){
+		TypeOfDocument tod = gestionPymeManager.getPersonById(2L).getTypeOfDocument();
+		System.out.println(tod.getCountry().getCountry());
+		
+	}
 
 	// @Test
 	// @Rollback(false)

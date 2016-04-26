@@ -1,54 +1,177 @@
-/*  create schema user_center_pyme_managment;
+/*
+  create schema pyme_managment;
   commit;
-  use user_center_pyme_managment;
-
-create table PM_PERMISO(
+  use pyme_managment;
+  
+  
+CREATE TABLE  PM_TYPE_PERSON(
 	ID INT AUTO_INCREMENT,
-	NOMBRE VARCHAR(40),
-	CONSTRAINT pk_id_permiso PRIMARY KEY (ID)
+    DESCRIPTION VARCHAR(20),
+    constraint pk_id_type_client primary key(ID)
+);
+
+create table PM_COUNTRY(
+ID INT AUTO_INCREMENT,
+COUNTRY VARCHAR(100),
+COUNTRY_CODE VARCHAR(10),
+TELEPHONE_CODE VARCHAR(10),
+constraint pk_id_type_country primary key (ID)
 );
 
 commit;
 
-create table PM_PERFIL(
+
+
+CREATE TABLE PM_TYPE_DOCUMENT(
+	ID INT AUTO_INCREMENT,
+    DESCRIPTION VARCHAR(20),
+    ID_COUNTRY INT,
+    constraint pk_id_type_document primary key(ID),
+    constraint fk_id_country_doc foreign key(ID_COUNTRY) references PM_COUNTRY(ID)
+);
+COMMIT;
+
+### Tipo de telefono (personal, laboral, celular, celular trabajo)
+CREATE TABLE PM_TYPE_PHONE(
+	ID INT AUTO_INCREMENT,
+    DESCRIPTION VARCHAR(30),    
+    constraint pk_id_type_phone primary key(ID)
+);
+
+commit;
+### TIPO DE DIRECCION Y DIRECCION  
+CREATE TABLE PM_TYPE_ADRESS(
+	ID INT AUTO_INCREMENT,
+    DESCRIPTION VARCHAR(20),
+    constraint pk_id_type_adress primary key(ID)
+);
+
+commit;
+
+
+create table PM_PERSON(
 	ID INT auto_increment,
-	NOMBRE VARCHAR(40),
-	CONSTRAINT pk_id_perfil PRIMARY KEY (ID)
+	NAME VARCHAR(70),
+	ID_TYPE_DOCUMENT INT,
+	DOCUMENT VARCHAR(20),
+	TYPE_PERSON varchar(20),
+	MAIN_ADRESS int,
+	constraint pk_id_person PRIMARY KEY (ID),
+	constraint fk_id_type_document FOREIGN KEY(ID_TYPE_DOCUMENT) REFERENCES PM_TYPE_DOCUMENT(ID)
 );
 
-COMMIT;
+COMMIT ;
 
-create table PM_PERFIL_PERMISO(
-ID INT auto_increment,
-ID_PERFIL INT,
-ID_PERMISO INT,
-constraint pk_id_perfil_permiso PRIMARY KEY (ID),
-constraint fk_id_perfil_permiso FOREIGN KEY (ID_PERFIL)  references PM_PERFIL (ID),
-CONSTRAINT fk_id_permiso_perfil foreign key (ID_PERMISO) references PM_PERMISO(ID)
-);
 
-COMMIT;
-
-create table PM_USER(
+create table PM_PHONE(
 ID INT AUTO_INCREMENT,
-name varchar(50),
-username varchar(20),
-password varchar(100),
-email varchar(60),
-locked char(1),
-last_login datetime,
-phone varchar(30),
-constraint pk_id_user primary key (id)
+PHONE VARCHAR(30),
+AREA_CODE VARCHAR(20),
+ID_TYPE_PHONE INT,
+ID_COUNTRY INT,
+ID_PERSON int,
+CONSTRAINT pk_id_phone PRIMARY KEY(ID),
+constraint fk_type_phone FOREIGN KEY (ID_TYPE_PHONE) references PM_TYPE_PHONE(ID),
+constraint fk_country_phone FOREIGN KEY (ID_COUNTRY) references PM_COUNTRY(ID),
+CONSTRAINT fk_person_phone FOREIGN KEY (ID_PERSON) references PM_PERSON(ID)
+
 );
 
 commit;
 
-create table PM_USER_PERFILES(
-ID INT AUTO_INCREMENT,
-ID_USER INT,
-ID_PERFIL INT,
-constraint pk_id_user_perfil primary key (id),
-constraint fk_id_user_perfil foreign key(id_user) references PM_USER(ID),
-constraint fk_id_prefil_user foreign key(id_perfil) references PM_PERFIL(ID)
+
+create table PM_ADRESS(
+	ID INT AUTO_INCREMENT,
+    STREET VARCHAR(30),
+    NUM INT,
+    APARTMENT VARCHAR(10),
+    ID_TYPE_ADRESS INT,
+	ID_PERSON INT,
+	ID_COUNTRY INT,
+	POST_CODE VARCHAR(10), ##CODIGO POSTAL
+    CONSTRAINT pk_id_adress PRIMARY KEY(ID),
+    CONSTRAINT fk_id_type_adress FOREIGN KEY (ID_TYPE_ADRESS) references PM_TYPE_ADRESS(ID),
+	CONSTRAINT fk_id_person_adress foreign key(ID_PERSON) references PM_PERSON(ID)
 );
-commit;*/
+commit;
+
+create table PM_TYPE_VENDOR(
+	ID INT auto_increment,
+	DESCRIPTION varchar(30),
+	CONSTRAINT pk_id_type_vendor PRIMARY KEY (ID)
+);
+
+commit;
+
+create table PM_TYPE_CLIENT(
+	ID INT auto_increment,
+	DESCRIPTION varchar(30),
+	CONSTRAINT pk_id_type_client PRIMARY KEY (ID)
+);
+
+
+commit;
+
+create table PM_TYPE_PRODUCT(
+	ID INT auto_increment,
+	DESCRIPTION varchar(20),
+	ID_PADRE int,
+	constraint pk_id_type_product PRIMARY KEY(ID)
+);
+commit;
+
+alter table PM_TYPE_PRODUCT
+add constraint fk_id_type_product FOREIGN KEY (ID_PADRE) references PM_TYPE_PRODUCT(ID);
+commit;
+
+create table PM_CLIENT(
+	ID INT auto_increment,
+	ID_TYPE_CLIENT INT,
+	ID_PERSON INT,
+	CONSTRAINT pk_id_client primary key(id),
+	CONSTRAINT fk_id_type_client foreign key (ID_TYPE_CLIENT) references PM_TYPE_CLIENT(ID), 
+	constraint fk_id_persona_client foreign key(ID_PERSON) REFERENCES PM_PERSON(ID)
+);
+commit;
+
+create table PM_VENDOR(
+	ID INT auto_increment,
+	ID_TYPE_VENDOR INT,
+	ID_PERSON INT,
+	CONSTRAINT pk_id_vendor primary key(id),
+	CONSTRAINT fk_id_type_vendor foreign key (ID_TYPE_VENDOR) references PM_TYPE_VENDOR(ID), 
+	constraint fk_id_persona_vendor foreign key(ID_PERSON) REFERENCES PM_PERSON(ID)
+); 
+
+commit;
+
+	alter table pm
+*/
+
+create table PM_TYPE_EMPLOYEE(
+ID int auto_increment,
+NAME varchar(50),
+DESCRIPTION varchar(200),
+BASIC_SALARY DOUBLE,
+constraint pk_id_type_employee PRIMARY KEY (ID)
+);
+commit;
+
+create table PM_HORARIO_LABORAL(
+ID int auto_increment,
+DESCRIPCION varchar(50),
+HORA_INGRESO time,
+HORA_SALIDA time,
+constraint pk_id_horario_laboral PRIMARY key (ID)
+);
+commit;
+
+create table PM_EMPLOYEE(
+	ID INT auto_increment,
+    LEGAJO varchar(50),
+	ID_PERSON INT,
+    FECHA_INGRESO date,
+    constraint pk_id_employee PRIMARY KEY(ID),
+    constraint fk_person_employee foreign key (ID_PERSON) references PM_PERSON(ID)
+);
+commit;
