@@ -27,7 +27,9 @@ public class LoginPymeRestService {
 	@Produces(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	@Consumes(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 	public Response login(final String json){
+		System.out.println(json);
 		String resultado = loginController.login(json);
+		System.out.println(resultado);
 		return Response.status(201).entity(resultado).build();
 	}
 	

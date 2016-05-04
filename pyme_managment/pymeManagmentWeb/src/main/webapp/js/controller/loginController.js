@@ -8,12 +8,14 @@ app.controller('loginController',['$scope','$location', '$http', function($scope
 			// $http.post('http://localhost:8080/pymeManagmentController/userCenter/login');
 			$http({
 				method: 'POST',
-				url: 'http://localhost:8080/pymeManagmentController/userCenter/login',
+				url: 'http://localhost:8080/pymeManagmentWeb/app/userCenter/login',
 				
-				data: "{'userName': 'gattex', 'password': '123' }",
+				data: "{'userName': 'as', 'password': '12345678' }",
 				headers: "{'Content-Type': 'application/json'}"
 			}).then(function(success){
-				alert("anduvo")
+				console.log(success.config);
+				console.log("JEJEJE")
+				console.log(success.config.data);
 			},function(error){
 				console.error(" Error al invocar el ws: " + JSON.stringify(error));
 			});

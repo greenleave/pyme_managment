@@ -24,15 +24,6 @@ app.controller('loginController',['$scope','$location', '$http', function($scope
 				alert("Todo una cagada");
 				$location.href= 'www.google.com';
 			})
-			// var uname = $scope.userName;
-			// var password = $scope.password;
-			// if( uname == 'admin'  && password == 'admin'){
-			// 	alert("entro al if");
-			// 	$location.path('/dashboard');
-			// }else{
-			// 	alert ("todos putos y cagones");
-			// 	$location.path('/dashboard');
-			// }
 	};
 }]);
 /*
