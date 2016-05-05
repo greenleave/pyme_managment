@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/pymeManagmentModel/pymeManagmentModel.iml" filepath="$PROJECT_DIR$/pymeManagmentModel/pymeManagmentModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pymeManagmentView/pymeManagmentView.iml" filepath="$PROJECT_DIR$/pymeManagmentView/pymeManagmentView.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pymeManagmentWeb/pymeManagmentWeb.iml" filepath="$PROJECT_DIR$/pymeManagmentWeb/pymeManagmentWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pyme_managment.iml" filepath="$PROJECT_DIR$/pyme_managment.iml" />
+    </modules>
+  </component>
+</project>

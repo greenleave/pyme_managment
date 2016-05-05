@@ -34,7 +34,7 @@ public class TestUserCenterView {
 		u.setPassword("seeb143");
 		String json =  gson.toJson(u); //"User:{userName:'seeb', password:'seeb143'}";
 		System.out.println(json);
-		loginController.login(json);
+		System.out.println(loginController.login(json));
 	}
 	
 	
