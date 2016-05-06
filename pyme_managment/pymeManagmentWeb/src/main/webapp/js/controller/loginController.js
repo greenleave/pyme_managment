@@ -16,6 +16,7 @@ app.controller('loginController',['$scope','$location', '$http', function($scope
 				}
 			},function(error){
 				console.error(" Error al invocar el ws: " + JSON.stringify(error));
+				$window.location.href="/error";
 			});
 	};
 }])
