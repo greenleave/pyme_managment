@@ -10,12 +10,15 @@ app.controller('loginController',['$scope','$location', '$http', function($scope
 				method: 'POST',
 				url: 'http://localhost:8080/pymeManagmentWeb/app/userCenter/login',
 				
-				data: "{'userName': 'as', 'password': '12345678' }",
+				data: "{'userName': 'as', 'password': '12345678a' }",
 				headers: "{'Content-Type': 'application/json'}"
 			}).then(function(success){
-				console.log(success.config);
-				console.log("JEJEJE")
-				console.log(success.config.data);
+				json=success.data;
+				if(json==""){
+					alert("Usuario o password invalido");
+				}else{
+					alert("Sos un fucking genio");
+				}
 			},function(error){
 				console.error(" Error al invocar el ws: " + JSON.stringify(error));
 			});
