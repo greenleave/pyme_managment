@@ -10,13 +10,13 @@ import ar.com.greenleave.pymeManagment.model.login.dao.LoginGenericDao;
 import ar.com.greenleave.pymeManagment.model.service.LoginClienteManager;
 
 @Transactional
-@Service("loginManager")
+@Service("loginClienteManager")
 public class LoginClienteManagerImpl implements LoginClienteManager {
 
-	@Autowired
+	@Autowired(required=true)
 	private LoginGenericDao genericDao;
 
-	@Autowired
+	@Autowired(required=true)
 	private LoginDao loginDao;
 
 	public User login(String userName, String password) {

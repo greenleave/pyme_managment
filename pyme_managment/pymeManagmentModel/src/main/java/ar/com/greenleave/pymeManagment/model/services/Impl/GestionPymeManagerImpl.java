@@ -1,34 +1,37 @@
 package ar.com.greenleave.pymeManagment.model.services.Impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeDao;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.GestionPymeGenericDao;
-import ar.com.greenleave.pymeManagment.model.gestionPyme.gestiomEmpleados.Employee;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Client;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Country;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfAdress;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfDocument;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.TypeOfPhone;
 import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Vendor;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.Employee;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.HorarioLaboral;
+import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionEmpleados.TypeOfEmployee;
 import ar.com.greenleave.pymeManagment.model.service.GestionPymeManager;
-
 @Transactional
-@Repository("gestionPymeManager")
+@Service("gestionPymeManager")
 public class GestionPymeManagerImpl implements GestionPymeManager{
 	
 	private static Log log = LogFactory.getLog(GestionPymeManagerImpl.class);
 	
-	@Autowired
+	@Autowired(required=true)
 	private GestionPymeGenericDao gestionPymeGenericDao;
 	
-	@Autowired
+	@Autowired(required=true)
 	private GestionPymeDao gestionPymeDao;
 
 	public void createPerson(Person person) {
@@ -61,10 +64,9 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 		gestionPymeGenericDao.delete(country);
 		
 	}
-
-	public List<Country> getCountries(Country country) {
-		
-		return gestionPymeDao.getCountries(country);
+	
+	public List<Country> getCountries() {
+		return gestionPymeGenericDao.findAll(Country.class);
 	}
 
 	public void createTypePhone(TypeOfPhone typePhone) {
@@ -101,8 +103,140 @@ public class GestionPymeManagerImpl implements GestionPymeManager{
 		gestionPymeGenericDao.save(vendor);
 	}
 
+//	public void createEmployee(Employee employee) {
+//		gestionPymeGenericDao.save(employee);
+//	}
+
+	public List<TypeOfDocument> getTypesOfDocuments() {
+		return gestionPymeGenericDao.findAll(TypeOfDocument.class);
+	}
+
+	public List<TypeOfPhone> getTypesOfPhone() {
+		return gestionPymeGenericDao.findAll(TypeOfPhone.class);
+	}
+
+	public void createTypeDocument(TypeOfDocument typeDocument) {
+		gestionPymeGenericDao.save(typeDocument);
+		
+	}
+
+	public void updateTypeDocument(TypeOfDocument typeDocument) {
+		gestionPymeGenericDao.update(typeDocument);
+		
+	}
+
+	public void deleteTypeDocument(TypeOfDocument typeDocument) {
+		gestionPymeGenericDao.delete(typeDocument);
+	}
+
+	public List<TypeOfAdress> getTypesAdress() {
+		return gestionPymeGenericDao.findAll(TypeOfAdress.class);
+	}
+
+	public Country getCountryById(Long id) {
+		return gestionPymeGenericDao.get(Country.class, id);
+	}
+
+	public Person getPersonById(Long id) {
+		return gestionPymeGenericDao.get(Person.class, id);
+	}
+
+	public TypeOfPhone getTypeOfPhoneById(Long id) {
+		return gestionPymeGenericDao.get(TypeOfPhone.class, id);
+	}
+
+	public TypeOfDocument getTypeOfDocumentById(Long id) {
+		return gestionPymeGenericDao.get(TypeOfDocument.class, id);
+	}
+
+	public TypeOfAdress getTypeOfAdressById(Long id) {
+		return gestionPymeGenericDao.get(TypeOfAdress.class, id);
+	}
+
+	public List<Employee> getEmployees() {
+		return gestionPymeGenericDao.findAll(Employee.class);
+	}
+
+	public List<Employee> getEmployeesByTypeEmployee(String typeEmployee) {
+		return gestionPymeDao.getEmployeesByTypeEmployee(typeEmployee);
+	}
+
+	public List<Employee> getEmployeesByTypeEmployeeId(Long id) {		
+		return gestionPymeDao.getEmployeesByTypeEmployeeId(id);
+	}
+
+	public Employee getEmployee(Long id) {
+		return gestionPymeGenericDao.get(Employee.class, id);
+	}
+
 	public void createEmployee(Employee employee) {
 		gestionPymeGenericDao.save(employee);
 	}
+
+	public void updateEmployee(Employee employee) {
+		gestionPymeGenericDao.update(employee);
+	}
+
+	public void deleteEmployee(Employee employee) {
+		gestionPymeGenericDao.delete(employee);
+	}
+
+	public void createTypeEmployee(TypeOfEmployee typeOfEmployee) {
+		gestionPymeGenericDao.save(typeOfEmployee);
+	}
 	
+	public void updateTypeEmployee(TypeOfEmployee typeOfEmployee) {
+		gestionPymeGenericDao.update(typeOfEmployee);
+	}
+
+	public void deleteTypeEmployee(TypeOfEmployee typeOfEmployee) {
+		gestionPymeGenericDao.delete(typeOfEmployee);
+		
+	}
+
+	public TypeOfEmployee getTypeOfEmployeeById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<TypeOfEmployee> getTypeEmployeesByLikeName(String name) {
+		return gestionPymeDao.getTypeEmployeesByLikeName(name);
+	}
+
+	public List<TypeOfEmployee> getTypesOfEmployees() {
+		return gestionPymeGenericDao.findAll(TypeOfEmployee.class);
+	}
+
+	public HorarioLaboral getHorarioLaboralById(Long id) {
+		return gestionPymeGenericDao.get(HorarioLaboral.class, id);
+	}
+
+	public List<HorarioLaboral> getHorariosLaboralesByHorarioSalida(Date date) {
+		return gestionPymeDao.getHorariosLaboralesByHorario(null,date);
+	}
+
+	public List<HorarioLaboral> getHorariosLaboralesByHorarioEntrada(Date date) {
+		return gestionPymeDao.getHorariosLaboralesByHorario(date,null);
+	}
+
+	public List<HorarioLaboral> getHorariosLaborales() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void createHorarioLaboral(HorarioLaboral horarioLaboral) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void updateHorarioLabora(HorarioLaboral horarioLaboral) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteHorarioLaboral(HorarioLaboral horarioLaboral) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -28,7 +28,7 @@ public class Person {
 	@Column(name="NAME")
 	private String Name;
 	
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="ID_TYPE_DOCUMENT")
 	private TypeOfDocument typeOfDocument;
 	

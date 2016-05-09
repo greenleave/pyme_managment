@@ -14,7 +14,7 @@ public class LoginHibernateDaoHelper {
 		return this.loginSessionFactory.getCurrentSession();
 	}
 
-	public void setSessionFactory(SessionFactory pymeManagmentSessionFactory) {
-		this.loginSessionFactory = pymeManagmentSessionFactory;
+	public void setSessionFactory(SessionFactory loginSessionFactory) {
+		this.loginSessionFactory = loginSessionFactory;
 	}
 }

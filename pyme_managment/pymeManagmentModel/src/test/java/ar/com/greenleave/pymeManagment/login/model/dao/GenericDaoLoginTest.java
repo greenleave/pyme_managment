@@ -36,7 +36,7 @@ public class GenericDaoLoginTest extends AbstractTransactionalJUnit4SpringContex
 	@Rollback(false)
 	public void testInsertPerfil(){
 		Perfil perfil = new Perfil();
-		perfil.setName("Administrador");
+		perfil.setName("Ventas");
 		try {
 			genericDao.save(perfil);
 		} catch (GenerarUsuarioException e) {

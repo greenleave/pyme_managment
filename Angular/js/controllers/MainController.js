@@ -3,7 +3,7 @@ angular.module('ReporteApp').controller('MainController', myFunctionMainControll
 function myFunctionMainController($scope, informeService) {
   var datos = informeService.getDatos();
   
-  datos.then(function(data) {
+  datos.then(function(data){
 	var chart = {};
 	chart.type = "ColumnChart";
     chart.displayed = false;

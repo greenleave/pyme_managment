@@ -12,6 +12,7 @@ import ar.com.greenleave.pymeManagment.model.gestionPyme.dao.impl.GestionPymeDao
 import ar.com.greenleave.pymeManagment.model.login.User;
 import ar.com.greenleave.pymeManagment.model.login.dao.LoginDao;
 
+
 @Repository(value = "loginDao")
 public class LoginDaoImpl extends LoginHibernateDaoHelper implements LoginDao {
 
