@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.google.gson.Gson;
 
-import ar.com.greenleave.pymeManagment.model.gestionPyme.gestionCliente.Person;
 import ar.com.greenleave.pymeManagment.model.login.User;
 import ar.com.greenleave.pymeManagment.model.service.LoginClienteManager;
 import ar.com.greenleave.pyme_managment.pymeManagmentWeb.controller.LoginController;

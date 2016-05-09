@@ -7,8 +7,10 @@ app.config(function($routeProvider){
 	}).when('/dashboard', {
 		//Le indico a que pagina tiene que ir
 		templateUrl: 'main.html'
+	}).when('/Error',{
+		templateUrl: 'error.html'
 	})
 	.otherwise({
-		redirectTo: '/'
+		redirectTo: 'notFound.html'
 	});
 });
