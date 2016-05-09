@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+	<HEAD>
+		<meta charset="utf-8" />
+		<title>Login</title>	    
+	    <!-- Custom css-->
+		<link rel="stylesheet" type="text/css" href="../css/custom_css/login.css">
+		<!-- Bootstrap-->
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap-3.3.6/docs/dist/css/bootstrap.css" />
+		<!-- Angular js -->
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-resource.js" /> -->
+		
+	    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<!--Custom JS-->
+	    <script src="../js/login.js"/>
+	</HEAD>
+	<body ng-app="login_pyme_managment">
+		<div ng-controller="login_controller" class="container">
+		<form class="form-signin">
+	        <h2 class="form-signin-heading">Pyme Managment</h2>
+	        <label for="inputEmail" class="sr-only">User</label>
+	        <input id="inputEmail" ng-model="userName"class="form-control" placeholder="Usuario" required="" autofocus="true" type="text">
+	        <label for="inputPassword" class="sr-only">Contrase&ntilde;a</label>
+	        <input id="inputPassword" ng-model="password" class="form-control" placeholder="Contrase&ntilde;a" required="" type="password">
+	        <p ng-bind="fullName"/>
+	        {{fullName}}
+	        <div class="checkbox">
+	          <label>
+	            <input value="record" type="checkbox"> Recordar usuario y contrase&ntilde;a
+	          </label>
+	        </div>
+	        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	      </form></div> <!-- /container -->
+	    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
+	    <script src="Signin%20Template%20for%20Bootstrap_archivos/ie10-viewport-bug-workaround.js"></script>
+	    -->
+	</body>
+</html>
