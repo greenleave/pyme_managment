@@ -7,9 +7,6 @@ function loginService($http,$q){
 				}
 	return pp;
 
-
-
-
 // a lo que esta declarado como .then o ,function(error) se lo llama promesas. Eso es lo que returna el deferred.promise
 	function loginUser(){
 		var deferred = $q.defer();

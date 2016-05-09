@@ -16,21 +16,3 @@ function mainLoginController($scope, loginService) {
 
 	}
 }
-
-
-	// $http({
-	// 		method: 'POST',
-	// 		url: 'http://localhost:8080/pymeManagmentWeb/app/userCenter/login',
-	// 		data: "{'userName': 'as', 'password': '12345678a' }",
-	// 		headers: "{'Content-Type': 'application/json'}"
-	// 	}).then(function(success){
-	// 		json=success.data;
-	// 		if(json==""){
-	// 			alert("Usuario o password invalido");
-	// 		}else{
-	// 			alert("Sos un fucking genio");
-	// 		}
-	// 	},function(error){
-	// 		console.error(" Error al invocar el ws: " + JSON.stringify(error));
-	// 		$window.location.href="/error";
-	// 	});
