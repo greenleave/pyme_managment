@@ -3,7 +3,8 @@ angular.module('mainApp').factory('loginService', loginService);
 function loginService($http,$q){
 
 	var pp = 	{
-					loginUser:loginUser
+					loginUser:loginUser,
+					clearCredentials:clearCredentials
 				}
 	return pp;
 
@@ -22,4 +23,9 @@ function loginService($http,$q){
 			});
 		return deferred.promise;		
 	}
+
+	function clearCredentials(){
+		
+	}
+
 }

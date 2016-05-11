@@ -1,5 +1,9 @@
-angular.module('mainApp').controller('loginController', mainLoginController);
-function mainLoginController($scope, loginService) {
+angular.module('mainApp').controller('loginController', loginUserController);
+loginUserController.$inject['$scope','$location'];
+function loginUserController($scope,$location, loginService) {
+
+
+
 	$scope.login = function(){
 		// var datos = loginService.getDatos($scope.userName, $scope.password);
 		var datos = loginService.loginUser('as','12345678a');
@@ -9,10 +13,13 @@ function mainLoginController($scope, loginService) {
 				alert("El usuario o el password es invalido");
 			}
 			else{
-				$window.location.href="/dashboard";
+				alert("Deberia funcionar");
+				$location.path="/dashboard";
 			}
 		});
-		//Si da error en la conexiÃ³n lo redirijo a otro lugar del mundo
+	}
 
+	function initController(){
+		loginService.clearCredentials;
 	}
 }
