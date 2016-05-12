@@ -27,7 +27,6 @@ public class LoginControllerGsonImpl implements LoginController{
 
 	@Override
 	public String createUser(String json) {
-		System.out.println(User.class);
 		User nuevoUsuario =gson.fromJson(json, User.class);
 		return gson.toJson(loginClienteManager.userRegistration(nuevoUsuario));
 	}

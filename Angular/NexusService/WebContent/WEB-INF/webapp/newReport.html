@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Nexus Dashboard - Nuevo Report</title>
+  		<script type="text/javascript" src="http://code.angularjs.org/1.1.0/angular.min.js"></script>
+  		<script type="text/javascript" src="http://code.angularjs.org/1.1.0/angular-resource.min.js"></script>
+    	<script type="text/javascript" src="app/app.module.js" ></script>
+     	<script type="text/javascript" src="app/components/newReport.js" ></script> 
+    </head>
+	<body>
+	<div ng-controller="newReport">
+	  <form novalidate class="simple-form">
+	    Setting ID: <input type="number" ng-model="data.setting" /><br />
+	    Description del Reporte: <input type="string" ng-model="data.desc" /><br />
+	    Query: <input type="string" ng-model="data.query" /><br />
+	    Chart ID: <input type="number" ng-model="data.chart" /><br />
+	    Configurcion del Reporte: <input type="string" ng-model="data.reportConfig" /><br />
+	    Tiempo de actualizacion: <input type="number" ng-model="data.refreshTime" /><br />
+	    <input type="submit" ng-click="create(data)" value="Insert" />
+	  </form>	  
+	</div>
+	<br /><br />
+	<div>Estado creación nuevo Reporte:</div>
+	<div ng-controller="newReport">
+		{{ estado }}
+	</div>
+
+    </body>
+</html>

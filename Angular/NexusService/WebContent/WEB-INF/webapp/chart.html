@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Nexus Dashboard - Bar Chart</title>
+  		<script type="text/javascript" src="http://code.angularjs.org/1.1.0/angular.min.js"></script>
+  		<script type="text/javascript" src="http://code.angularjs.org/1.1.0/angular-resource.min.js"></script>
+	  	<script type="text/javascript" src="http://www.google.com/jsapi?ext.js"></script>
+    	<script type="text/javascript" src="app/app.module.js" ></script>
+     	<script type="text/javascript" src="app/components/chartController.js" ></script> 
+    </head>
+	<body>
+	
+	<div ng-controller="chartController">
+	  <form novalidate class="simple-form">
+	    User Id: <input type="number" ng-model="data.user" /><br />
+	    Setting Id: <input type="number" ng-model="data.setting" /><br />
+	    Report Id: <input type="number" ng-model="data.report" /><br />
+	    Chart Id: <input type="number" ng-model="data.chart" /><br />
+	    <input type="submit" ng-click="query(data)" value="Select" />
+	  </form>	  
+	</div>
+	<br /><br />
+	<div>Grafico:</div>
+	<div ng-controller="chartController">
+		<div id="chart"></div>
+	</div>
+    </body>
+</html>

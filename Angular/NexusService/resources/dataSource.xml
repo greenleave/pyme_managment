@@ -1,0 +1,35 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location">
+		<value>classpath:database.properties</value>
+	</property>
+</bean>
+ 
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="${jdbc.driverClassName}" />
+	<property name="url" value="${jdbc.url}" />
+	<property name="username" value="${jdbc.username}" />
+	<property name="password" value="${jdbc.password}" />
+</bean>
+
+<bean id="reportDao" class="ar.com.nextel.model.dao.impl.ReportDaoImpl">
+	<property name="dataSource" ref="dataSource"/>
+</bean>
+
+<bean id="settingDao" class="ar.com.nextel.model.dao.impl.SettingDaoImpl">
+	<property name="dataSource" ref="dataSource"/>
+</bean>
+
+<bean id="userDao" class="ar.com.nextel.model.dao.impl.UserDaoImpl">
+	<property name="dataSource" ref="dataSource"/>
+</bean>
+
+<bean id="chartDao" class="ar.com.nextel.model.dao.impl.ChartDaoImpl">
+	<property name="dataSource" ref="dataSource"/>
+</bean>
+
+</beans>
