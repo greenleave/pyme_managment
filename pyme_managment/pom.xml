@@ -8,5 +8,6 @@
   <modules>
   	<module>pymeManagmentModel</module>
     <module>pymeManagmentWeb</module>
+    <module>pymeManagmentDesktop</module>
   </modules>
 </project>
