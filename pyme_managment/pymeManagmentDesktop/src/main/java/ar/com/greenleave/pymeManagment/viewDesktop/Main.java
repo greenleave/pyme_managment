@@ -1,5 +1,5 @@
 package ar.com.greenleave.pymeManagment.viewDesktop;
 
-public class Hola {
+public class Main {
 
 }

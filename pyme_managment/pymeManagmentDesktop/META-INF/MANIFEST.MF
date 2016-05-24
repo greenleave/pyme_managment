@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: pymeManagmentDesktop
+Bundle-SymbolicName: pymeManagmentDesktop
+Bundle-Version: 1.0.0.qualifier
+Export-Package: ar.com.greenleave.pymeManagment.viewDesktop,
+ ar.com.greenleave.pymeManagment.viewDesktop.EntryPoint,
+ ar.com.greenleave.pymeManagment.viewDesktop.view.DTO,
+ ar.com.greenleave.pymeManagment.viewDesktop.widgets,
+ ar.com.greenleave.pymeManagment.viewDesktop.widgets.login
