@@ -145,7 +145,7 @@ create table PM_VENDOR(
 
 commit;
 
-	alter table pm
+##	alter table pm
 */
 
 create table PM_TYPE_EMPLOYEE(

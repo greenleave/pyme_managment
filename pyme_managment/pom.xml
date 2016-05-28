@@ -8,5 +8,6 @@
   <modules>
   	<module>pymeManagmentModel</module>
     <module>pymeManagmentWeb</module>
+    <module>pyme_managment_desktop_ernesto</module>
   </modules>
 </project>
