@@ -2,23 +2,27 @@ package ar.com.greenleave.pymeManagment.viewDesktop.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class BasicController
+public class LoginController
 {
-    private static final Logger log = LoggerFactory.getLogger(BasicController.class);
+    private static final Logger log = LoggerFactory.getLogger(LoginController.class);
 
-    @FXML private TextField firstNameField;
-    @FXML private TextField lastNameField;
-    @FXML private Label messageLabel;
+    @FXML 
+    private TextField txtUserName;
+    @FXML 
+    private PasswordField pwdLoginPass;
+    @FXML 
+    private Label messageLabel;
 
-    public void sayHello() {
+    public void login() {
 
-        String firstName = firstNameField.getText();
-        String lastName = lastNameField.getText();
+        String firstName = txtUserName.getText();
+        String lastName = pwdLoginPass.getText();
 
         StringBuilder builder = new StringBuilder();
 

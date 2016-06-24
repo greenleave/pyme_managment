@@ -20,7 +20,6 @@ public class Main extends Application {
 	public void start(Stage stage) throws Exception {
 
 		log.info("Starting Hello JavaFX and Maven demonstration application");
-
 		String fxmlFile = "/fxml/hello.fxml";
 		log.debug("Loading FXML for main view from: {}", fxmlFile);
 		FXMLLoader loader = new FXMLLoader();
@@ -30,7 +29,7 @@ public class Main extends Application {
 		Scene scene = new Scene(rootNode, 400, 200);
 		scene.getStylesheets().add("/styles/styles.css");
 
-		stage.setTitle("Hello JavaFX and Maven");
+		stage.setTitle("Pyme Managment v1.0");
 		stage.setScene(scene);
 		stage.show();
 	}
