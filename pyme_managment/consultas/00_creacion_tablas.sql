@@ -1,4 +1,4 @@
-/*
+
   create schema pyme_managment;
   commit;
   use pyme_managment;
@@ -145,8 +145,6 @@ create table PM_VENDOR(
 
 commit;
 
-	alter table pm
-*/
 
 create table PM_TYPE_EMPLOYEE(
 ID int auto_increment,
