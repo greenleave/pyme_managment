@@ -2,8 +2,6 @@ package ar.com.greenleave.pymeManagmet.pymeManagmentDesktop.viewDesktop;
 
 import org.junit.Test;
 
-import com.google.gson.JsonElement;
-
 import ar.com.greenleave.pymeManagment.viewDesktop.DTO.GestionCliente.PersonDTO;
 import ar.com.greenleave.pymeManagment.viewDesktop.services.JsonService;
 import ar.com.greenleave.pymeManagment.viewDesktop.services.impl.JsonServiceImplDesktop;

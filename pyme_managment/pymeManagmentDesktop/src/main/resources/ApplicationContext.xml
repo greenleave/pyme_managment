@@ -19,6 +19,5 @@
 	<context:component-scan base-package="ar.com.greenleave.pymeManagment.viewDesktop" />
 
 	<!-- Bean del servicio para poder pegarle a la base de datos -->
-	<bean id="gsonService"
-		class="ar.com.greenleave.pymeManagment.viewDesktop.services.impl.JsonServiceImplDesktop" />
+	<bean id="jsonService" class="ar.com.greenleave.pymeManagment.viewDesktop.services.impl.JsonServiceImplDesktop" />
 </beans>

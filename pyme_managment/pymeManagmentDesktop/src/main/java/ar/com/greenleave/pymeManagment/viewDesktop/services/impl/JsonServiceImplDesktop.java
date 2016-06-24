@@ -1,7 +1,8 @@
 package ar.com.greenleave.pymeManagment.viewDesktop.services.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 
 import ar.com.greenleave.pymeManagment.viewDesktop.services.JsonService;
 
@@ -10,8 +11,10 @@ import ar.com.greenleave.pymeManagment.viewDesktop.services.JsonService;
  * @author sbogado
  * Objetivo: 	Hacer una instancia unica de gson. Y convertirlo en un servicio.
  * 				De esta forma se ahorra toda la cantidad de memoria que requeriría
- * 			 	instanciar uno por uno los objetos gson
+ * 			 	instanciar uno por uno los objetos gson. Va a dejar que todo dependa de spring
  */
+
+@Service("jsonService")
 public final class JsonServiceImplDesktop implements JsonService{
 	private static Gson gson = new Gson();
 	
