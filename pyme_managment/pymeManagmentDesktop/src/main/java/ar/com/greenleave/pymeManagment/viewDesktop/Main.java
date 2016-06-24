@@ -1,25 +1,37 @@
 package ar.com.greenleave.pymeManagment.viewDesktop;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javafx.application.Application;
-import javafx.geometry.Pos;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.LabelBuilder;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
-	public static void main(String[] args) {
-		Application.launch(args);
-	}
+    private static final Logger log = LoggerFactory.getLogger(Main.class);
 
-	@Override
-	public void start(Stage stage) throws Exception {
-		Label label = LabelBuilder.create().text("Maven + JavaFX = true").alignment(Pos.CENTER).build();
-		Scene scene = new Scene(label, 200, 100);
-		stage.setScene(scene);
-		stage.show();
+    public static void main(String[] args) throws Exception {
+        launch(args);
+    }
 
-	}
+    public void start(Stage stage) throws Exception {
 
+        log.info("Starting Hello JavaFX and Maven demonstration application");
+
+        String fxmlFile = "/fxml/hello.fxml";
+        log.debug("Loading FXML for main view from: {}", fxmlFile);
+        FXMLLoader loader = new FXMLLoader();
+        Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
+
+        log.debug("Showing JFX scene");
+        Scene scene = new Scene(rootNode, 400, 200);
+        scene.getStylesheets().add("/styles/styles.css");
+
+        stage.setTitle("Hello JavaFX and Maven");
+        stage.setScene(scene);
+        stage.show();
+    }
 }
