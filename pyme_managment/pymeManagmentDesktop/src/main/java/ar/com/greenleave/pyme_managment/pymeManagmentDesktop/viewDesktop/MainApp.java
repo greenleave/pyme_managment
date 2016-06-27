@@ -3,6 +3,8 @@ package ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,12 +12,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * Hello world!
- *
- */
 public class MainApp extends Application {
 	private static final Logger log = LoggerFactory.getLogger(MainApp.class);
+	private static ApplicationContext applicationContext= new ClassPathXmlApplicationContext("ApplicationContext.xml");
 	
 	
 	@Override
@@ -31,7 +30,7 @@ public class MainApp extends Application {
 		Scene scene = new Scene(rootNode, 400, 200);
 		scene.getStylesheets().add("/styles/styles.css");
 
-		stage.setTitle("Hello JavaFX and Maven");
+		stage.setTitle("Login");
 		stage.setScene(scene);
 		stage.show();
 
