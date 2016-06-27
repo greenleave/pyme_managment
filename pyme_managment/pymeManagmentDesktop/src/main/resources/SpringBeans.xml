@@ -14,13 +14,21 @@
     http://www.springframework.org/schema/tx 
     http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 	
-	<tx:annotation-driven />
+	<bean id="jsonService" class="ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.services.impl.JsonServiceImplDesktop">
+	</bean>
+	<bean id="comunicacionService" class="ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.services.impl.ComunicacionServiceImpl"></bean>
+
 	
-	<context:annotation-config />
-	<!--Scan de las clases -->
-	<context:component-scan
-		base-package="ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop" />
-	<!-- Configuracion de Beans -->
-	<import resource="SpringBeans.xml" />
-	
+	<!--  
+	<bean id="loginDao"
+		class="ar.com.greenleave.pymeManagment.model.login.dao.impl.LoginDaoImpl">
+		<property name="dataSource" ref="LOGINDB" />
+	</bean>
+	-->
+
+
+	<!-- <bean id="gestionServiceWrapper" class="ar.com.nextel.nexus.stsuc.model.integracion.GestionServiceWrapper"> 
+		</bean> <bean id="permanenciaServiceWrapper" class="ar.com.nextel.nexus.stsuc.model.integracion.PermanenciaServiceWrapper"> 
+		</bean> <bean id="fileDownloadService" class="ar.com.nextel.nexus.stsuc.service.impl.FileDownloadServiceImpl"> 
+		</bean> -->
 </beans>

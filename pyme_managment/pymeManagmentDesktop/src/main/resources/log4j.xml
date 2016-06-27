@@ -10,7 +10,7 @@
         </layout>
     </appender>
 
-    <logger name="ar.com.greenleave.pymeManagment.viewDesktop">
+    <logger name="ar.com.greenleave.pyme_managmet.pymeManagmentDesktop.viewDesktop">
         <level value="DEBUG"/>
     </logger>
 
