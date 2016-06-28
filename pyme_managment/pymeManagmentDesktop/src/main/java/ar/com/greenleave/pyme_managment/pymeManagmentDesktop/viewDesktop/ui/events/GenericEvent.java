@@ -1,5 +1,7 @@
 package ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.ui.events;
 
-public class sarasa {
+public abstract class GenericEvent {
 
+	private static List<AbstractEventHandlers>
+	
 }
