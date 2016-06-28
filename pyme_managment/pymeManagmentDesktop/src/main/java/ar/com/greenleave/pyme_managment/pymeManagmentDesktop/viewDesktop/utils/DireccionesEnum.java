@@ -13,8 +13,5 @@ public enum DireccionesEnum {
 	}
 	public String getDireccion(){
 		return direccion;
-	}
-	
-	
-	
+	}	
 }

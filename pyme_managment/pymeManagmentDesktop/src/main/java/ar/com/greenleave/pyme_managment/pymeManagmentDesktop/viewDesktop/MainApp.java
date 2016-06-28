@@ -6,42 +6,28 @@ import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.controller.ScreensController;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class MainApp extends Application {
 	private static final Logger log = LoggerFactory.getLogger(MainApp.class);
 	private static ApplicationContext applicationContext= new ClassPathXmlApplicationContext("ApplicationContext.xml");
-	
-	
+	private ScreensController screensController;	
 	@Override
 	public void start(Stage stage) throws Exception {
-		log.info("Starting Hello JavaFX and Maven demonstration application");
-
-		String fxmlFile = "/fxml/hello.fxml";
-		log.debug("Loading FXML for main view from: {}", fxmlFile);
-		FXMLLoader loader = new FXMLLoader();
-		Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
-
-		log.debug("Showing JFX scene");
-		Scene scene = new Scene(rootNode, 400, 200);
-		scene.getStylesheets().add("/styles/styles.css");
-
-		stage.setTitle("Login");
-		stage.setScene(scene);
-		stage.show();
-
+		log.info("Comienza el programa");
+		screensController=(ScreensController)applicationContext.getBean("screensController");		
+		//Seteo el applicationContext al controller, para que sepa que mierda tiene
+		screensController.setApplicationContext(applicationContext);
+		screensController.init(stage);
 	}
 
 	public static void main(String[] args) {
 		launch(args);
 	}
 	
-	
 	public static ApplicationContext getApplicationContext(){
-		return applicationContext;
+		return MainApp.applicationContext;
 	}
 }

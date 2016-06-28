@@ -1,6 +1,6 @@
-package ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.controller;
+package ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.ui.controller;
 
-import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.utils.EnumAccion;
+import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.utils.PantallaEnum;
 
 /**
  * 
@@ -14,8 +14,10 @@ import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.utils.E
 public abstract class BasicScreenController {
 
 	private String titulo;
+	// el fxml
 	private String resource;
-
+	private PantallaEnum nextScreen;
+	
 	public String getTitulo() {
 		return titulo;
 	}
@@ -31,19 +33,10 @@ public abstract class BasicScreenController {
 	public void setResource(String resource) {
 		this.resource = resource;
 	}
-
 	
-	/**
-	 * Objetivo: 	Tengo que poder hacer que identifique la accion a realizar, levante el valor y a partir de ahí
-	 * 				poder determinar que accion se debe realizar. Eso va a ir con un switch sobre un enum
-	 * 
-	 */
-	public void accion() {
-		
-	}
-
 	public abstract void inicializarce(String json);
-
-	public abstract void capturarAccion(EnumAccion accion);
-
+	
+	public PantallaEnum getNextScreen(){
+		return nextScreen;
+	}
 }
