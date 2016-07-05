@@ -19,7 +19,6 @@ public class MainApp extends Application {
 		log.info("Comienza el programa");
 		screensController=(ScreensController)applicationContext.getBean("screensController");		
 		//Seteo el applicationContext al controller, para que sepa que mierda tiene
-		screensController.setApplicationContext(applicationContext);
 		screensController.init(stage);
 	}
 

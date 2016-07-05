@@ -7,10 +7,13 @@ import java.util.Stack;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
+import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.DTO.UserDTO;
+import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.services.JsonService;
 import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.ui.controller.BasicScreenController;
 import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.utils.PantallaEnum;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +24,8 @@ import javafx.stage.Stage;
 @Service("screensController")
 public class ScreensController implements ApplicationContextAware{
 	
-	
+	@Autowired (required=true)
+	private JsonService jsonService;
 	private static final Logger log = LoggerFactory.getLogger(ScreensController.class);
 	private HashMap<PantallaEnum, BasicScreenController> controlladoresDePantalla= new HashMap<PantallaEnum, BasicScreenController>();
 	private BasicScreenController currentScreen;
@@ -30,6 +34,10 @@ public class ScreensController implements ApplicationContextAware{
 	private Stage stage;
 	
 	public void init(Stage stage) {
+		UserDTO usuario=new UserDTO();
+		usuario.setEmail("seebogado@hotmail.com");
+		usuario.setPassword("xplotion");
+		System.out.println(jsonService.toJson(usuario));
 		this.stage= stage;
 		//Cargo el controlador del login con el stage.
 		this.controlladoresDePantalla.put(PantallaEnum.LOGIN, (BasicScreenController) applicationContext.getBean("loginController"));

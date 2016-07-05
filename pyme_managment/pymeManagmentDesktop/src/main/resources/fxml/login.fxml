@@ -12,12 +12,11 @@
         cols="[label, pref!][grow, 50::]"
         rows=""
         xmlns:fx="http://javafx.com/fxml">
-
     <Label text="Username:" /> <TextField fx:id="txtUserName" prefColumnCount="30" MigPane.cc="growx, wrap" />
     <Label text="Password:" />	<PasswordField fx:id="pwdLoginPass" prefColumnCount="30" MigPane.cc="growx, wrap" />
 
     <Button text="Login" onAction="#login" MigPane.cc="skip, gap :push, gaptop 15, wrap" />
-
+	<Hyperlink fx:id="hlkMensegeNewUser" text="Si no tiene usuario por favor creelo haciendo click aquí" onAction="#createNewUser" MigPane.cc="span, growx, gaptop 15" ></Hyperlink>
     <Label fx:id="messageLabel" styleClass="hello-message" MigPane.cc="span, growx, gaptop 15" />
 
 </MigPane >

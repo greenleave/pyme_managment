@@ -1,5 +1,8 @@
 package ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.ui.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.services.JsonService;
 import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.utils.PantallaEnum;
 
 /**
@@ -12,7 +15,7 @@ import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.utils.P
  *         realice la pantalla
  */
 public abstract class BasicScreenController {
-
+	
 	private String titulo;
 	// el fxml
 	private String resource;
