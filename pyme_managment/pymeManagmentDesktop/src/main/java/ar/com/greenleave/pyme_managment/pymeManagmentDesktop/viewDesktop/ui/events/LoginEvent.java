@@ -2,7 +2,8 @@ package ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.ui.eve
 
 import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.DTO.UserDTO;
 
-public class LoginEvent extends GenericEvent {
+public class LoginEvent{
+		
 	private UserDTO userDTO;
 	
 	public LoginEvent(UserDTO user){

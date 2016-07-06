@@ -7,8 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.MainApp;
 import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.DTO.UserDTO;
 import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.services.JsonService;
+import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.ui.events.LoginEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
@@ -39,8 +41,9 @@ public class LoginController extends BasicScreenController
         UserDTO usuarioALoguearse= new UserDTO();
         usuarioALoguearse.setUserName(userName);
         usuarioALoguearse.setPassword(password);
-        String json = jsonService.toJson(usuarioALoguearse);
-        log.error(json);
+        //Acá lanzo el evento. Vamos a ver si funciona
+        MainApp.getEventBus().post(new LoginEvent(usuarioALoguearse));
+        log.debug("Llego a loguear correctamente");
     }
     
     

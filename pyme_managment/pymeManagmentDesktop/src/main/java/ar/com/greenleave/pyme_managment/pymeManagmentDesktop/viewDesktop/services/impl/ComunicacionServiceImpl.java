@@ -4,8 +4,6 @@ package ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.servic
 
 import org.springframework.stereotype.Service;
 
-import com.google.gson.Gson;
-
 import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.services.ComunicacionService;
 import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.utils.DireccionesEnum;
 
@@ -14,9 +12,10 @@ import ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.utils.D
 public class ComunicacionServiceImpl implements ComunicacionService {
 
 	@Override
-	public void loguearPersona(Gson json) {
+	public void loguearPersona(String json) {
+		System.out.println("Esta es la dirección:  " + json);
 		String direccion = DireccionesEnum.ROOT.getDireccion()+DireccionesEnum.USER_CENTER.getDireccion()+ DireccionesEnum.LOGIN.getDireccion();
-		
+		System.out.println(direccion);
 	}
 
 }

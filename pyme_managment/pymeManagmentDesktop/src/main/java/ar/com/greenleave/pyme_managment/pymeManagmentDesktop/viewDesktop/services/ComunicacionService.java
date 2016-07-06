@@ -4,5 +4,5 @@ package ar.com.greenleave.pyme_managment.pymeManagmentDesktop.viewDesktop.servic
 import com.google.gson.Gson;
 
 public interface ComunicacionService{
-	void loguearPersona(Gson json);
+	void loguearPersona(String string);
 }
