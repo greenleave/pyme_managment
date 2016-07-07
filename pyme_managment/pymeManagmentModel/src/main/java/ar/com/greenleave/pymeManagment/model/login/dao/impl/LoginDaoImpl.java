@@ -77,5 +77,9 @@ public class LoginDaoImpl extends LoginHibernateDaoHelper implements LoginDao {
 		return c.list().size() == 1 ;
 	}
 	
+	
+	
+	
+	
 
 }

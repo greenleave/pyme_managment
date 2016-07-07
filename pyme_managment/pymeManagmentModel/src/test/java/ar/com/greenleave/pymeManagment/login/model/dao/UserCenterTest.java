@@ -50,4 +50,10 @@ public class UserCenterTest extends AbstractTransactionalJUnit4SpringContextTest
 		user.setUserName("ealbarez");
 		loginClienteManager.userRegistration(user);
 	}
+	
+	
+	@Test
+	public void selectList(){
+		
+	}
 }
