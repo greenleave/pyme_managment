@@ -28,18 +28,19 @@ public class ComunicacionServiceImpl implements ComunicacionService {
 		String direccion = DireccionesEnum.ROOT.getDireccion() + DireccionesEnum.USER_CENTER.getDireccion()
 				+ DireccionesEnum.LOGIN.getDireccion();
 		System.out.println(direccion);
-		sendPost(direccion, json);
+		this.sendPost(direccion, json);
 	}
 
 	private void sendPost(String direccion, String json) {
 		try {
 			URL url = new URL(direccion);
+			this.json=json;
 			//Mando a configurar la conexión (patrón dry)
 			HttpURLConnection conn = this.configConection(url);
 			//Envio el mensaje
 			this.sendMensagge();
-			String output;
 			System.out.println("Output from Server .... \n");
+			String output;
 			while ((output = br.readLine()) != null) {
 				System.out.println(output);
 			}
@@ -49,7 +50,6 @@ public class ComunicacionServiceImpl implements ComunicacionService {
 		} catch (IOException e) {
 
 			e.printStackTrace();
-
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -58,13 +58,13 @@ public class ComunicacionServiceImpl implements ComunicacionService {
 	
 	
 	private HttpURLConnection configConection(URL url) throws Exception{
-		HttpURLConnection connection;
+		
 		try {
-			connection = (HttpURLConnection) url.openConnection();
-			connection.setDoOutput(true);
-			connection.setRequestMethod("POST");
-			connection.setRequestProperty("Content-Type", "application/json");
-			return connection;
+			this.connection = (HttpURLConnection) url.openConnection();
+			this.connection.setDoOutput(true);
+			this.connection.setRequestMethod("POST");
+			this.connection.setRequestProperty("Content-Type", "application/json");
+			return this.connection;
 		} catch (IOException e) {
 			e.printStackTrace();
 			throw new Exception();
@@ -75,13 +75,13 @@ public class ComunicacionServiceImpl implements ComunicacionService {
 	private void sendMensagge() throws Exception{
 		OutputStream os;
 		try {
-			os = connection.getOutputStream();
+			os = this.connection.getOutputStream();
 			os.write(json.getBytes());
 			os.flush();
-			if (connection.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
-				throw new RuntimeException("Failed : HTTP error code : " + connection.getResponseCode());
+			if (this.connection.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
+				throw new RuntimeException("Failed : HTTP error code : " + this.connection.getResponseCode());
 			}
-			this.br = new BufferedReader(new InputStreamReader((connection.getInputStream())));
+			this.br = new BufferedReader(new InputStreamReader((this.connection.getInputStream())));
 		} catch (IOException e) {
 			//TODO: modificar el exeption
 			throw new Exception();

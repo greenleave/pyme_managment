@@ -1,6 +1,7 @@
 package ar.com.greenleave.pyme_managment.pymeManagmentWeb.rest.service;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -33,13 +34,13 @@ public class LoginPymeRestService {
 	}
 	
 	
-//	@GET
-//	@Path("/login2")
-//	@Produces(MediaType.APPLICATION_JSON + CHARSET_UTF8)
+	@GET
+	@Path("/login2")
+	@Produces(MediaType.APPLICATION_JSON + CHARSET_UTF8)
 //	@Consumes(MediaType.APPLICATION_JSON + CHARSET_UTF8)
-//	public Response loginGet(final String json){
-//		String resultado = loginController.login("{userName:'seeb', password:'seeb143'}");
-//		return Response.status(201).entity(resultado).build();
-//	}
+	public Response loginGet(){
+		String resultado = loginController.login("{userName:'seeb', password:'seeb143'}");
+		return Response.status(201).entity(resultado).build();
+	}
 	
 }

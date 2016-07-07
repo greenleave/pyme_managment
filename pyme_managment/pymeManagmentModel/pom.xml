@@ -54,7 +54,7 @@
 
 
 		<!-- Jersey -->
-		<dependency>
+	<!-- 	<dependency>
 			<groupId>org.glassfish.jersey.containers</groupId>
 			<artifactId>jersey-container-servlet</artifactId>
 			<version>2.18</version>
@@ -74,9 +74,9 @@
 			<artifactId>jersey-media-json-jackson</artifactId>
 			<version>2.18</version>
 		</dependency>
-
+ -->
 		<!-- Json -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>javax.json</groupId>
 			<artifactId>javax.json-api</artifactId>
 			<version>1.0</version>
@@ -86,15 +86,15 @@
 			<artifactId>javax.json</artifactId>
 			<version>1.0.4</version>
 		</dependency>
-
+ -->
 
 		<!-- Jersey Spring -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>org.glassfish.jersey.ext</groupId>
 			<artifactId>jersey-spring3</artifactId>
 			<version>2.18</version>
 		</dependency>
-
+ -->
 		<!-- Hibernate 4 -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
